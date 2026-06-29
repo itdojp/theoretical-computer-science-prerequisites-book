@@ -129,9 +129,9 @@ Python examples で小さい入力を動かす
 - 本体教科書 readiness checklist で、読む予定の章の必須項目を満たす。
 - 少なくとも1つのミニプロジェクトで、定義・実装・テスト・説明を揃える。
 
-## 参照導線
+## 学習支援ページ
 
-v1.0 では、次のページから目的別に戻れる。
+次のページから目的別に戻れます。
 
 | 目的 | ページ |
 |---|---|
@@ -140,27 +140,7 @@ v1.0 では、次のページから目的別に戻れる。
 | 用語を調べる | [用語索引](reference/glossary.md) |
 | 記号を調べる | [記号索引](reference/symbol-index.md) |
 | 学習進捗を消し込む | [学習チェックリスト](assessment/learning-checklists.md) |
-| 研修として運用する | [教員・研修担当者向け運用ガイド](operations/instructor-guide.md) |
-| コホートを管理する | [コホート運用ガイド](operations/cohort-operations-guide.md) |
-| 提出物を標準化する | [課題提出フォーマット](operations/assignment-submission-format.md) |
-| リリースを作る | [リリース手順](operations/release-process.md) |
-| 正式公開の監査を確認する | [v1.0 リリース候補監査レポート](audit/v1-release-candidate-audit.md) |
-| ライセンス方針を確認する | [ライセンス正式化メモ](audit/license-finalization.md) |
-| v1.0公開可否を判定する | [v1.0 リリースチェックリスト](audit/release-checklist-v1.md) |
+| 章別に理解を確認する | [章別レビュー問題](review/chapter-review-problems.md) |
+| 採点観点を確認する | [採点フォーム](assessment/grading-forms.md) |
 
-
-## v1.0 品質ゲートと運用ゲート
-
-教材更新時は、次を通過してから配布します。
-
-```bash
-python scripts/check_links.py
-python scripts/check_exercise_labels.py
-python scripts/check_exercise_solution_mapping.py
-python examples/python/tests.py
-python -m pytest
-```
-
-受講者運用では、各章の本文後に [章別レビュー問題](review/chapter-review-problems.md) を解き、[採点フォーム](assessment/grading-forms.md) で記録してください。
-
-複数受講者を扱う場合は、[受講者別進捗CSV](forms/learner-progress.csv) と [コホートダッシュボードCSV](forms/cohort-dashboard.csv) をコピーして使います。
+受講者運用、リリース、監査、品質ゲートなどの保守資料は、書籍サイトの導線から外し、[GitHub リポジトリ](https://github.com/itdojp/theoretical-computer-science-prerequisites-book)で管理します。

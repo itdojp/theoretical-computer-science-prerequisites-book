@@ -149,11 +149,13 @@ GitHub Pages は **GitHub Actions** からデプロイします。Pages workflow
 
 ## このリポジトリについて
 
-- `docs/`: 本文、演習、図表、運用文書
+- `docs/`: 本文、演習、図表、評価資料、およびリポジトリ保守資料
 - `examples/python/`: 小規模な Python 実装例
 - `scripts/`: 品質チェック・リリース補助スクリプト
 - `tests/`: pytest 用テスト
 - `.github/workflows/`: CI と Pages デプロイ
+
+書籍サイトでは読者向けの本文・演習・索引を主導線にしています。リリース、監査、保守、テンプレート類は GitHub 上の `docs/audit/`、`docs/release/`、`docs/operations/`、`docs/forms/`、`docs/quality/` を参照してください。
 
 ## ライセンス
 

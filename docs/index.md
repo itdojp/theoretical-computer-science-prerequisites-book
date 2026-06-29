@@ -4,6 +4,31 @@
 
 この教材は、理論計算機科学の本編を読むための前提を補う「前処理」です。理論計算機科学そのものの全範囲を説明する教材ではありません。
 
+## 想定読者
+
+- 理論計算機科学を学びたいが、数学記法・証明・離散数学に不安がある読者
+- 実務経験はあるが、集合・論理・計算量・形式言語・確率・数論を体系的に補強したいソフトウェアエンジニア
+- 『理論計算機科学教科書』へ入る前に前提診断と演習で準備したい読者
+- 研修・輪読会で理論計算機科学の前処理教材を使いたい教員・研修担当者
+
+## 非対象読者
+
+- 競技プログラミングやコーディング面接の短期対策だけを求める読者
+- 情報理論、暗号理論、並行計算だけを専門書レベルで深掘りしたい読者
+- 機械学習、深層学習、LLM の理論を直接学びたい読者
+
+## 前提知識
+
+基本的なプログラミング経験を前提にします。証明、集合、論理、漸近記法、形式言語、確率、数論、線形代数は、本書内で必要最小限から確認します。
+
+## 所要時間
+
+- 最短ルート: 前提診断と弱点章のみで 2〜4週間
+- 標準ルート: Core と Standard を中心に 6〜8週間
+- 拡張ルート: Extended、統合到達確認テスト、ミニプロジェクトまで含めて 10〜12週間
+
+## 学習成果
+
 本教材のゴールは次の状態を作ることです。
 
 1. 集合・論理・関数・関係の定義を読める。
@@ -26,8 +51,7 @@
 18. 自分の弱点を診断し、該当章・該当演習へ戻れる。
 19. 本体教科書の各章へ進む前に、readiness checklist で進行可否を判断できる。
 20. 用語索引・記号索引・章間リンクから必要箇所へ戻れる。
-21. 教員・研修担当者が診断、提出、レビュー、再提出、本体教科書への進行判定を運用できる。
-22. メンテナがCI、リリース、ライセンス、コントリビューションを管理できる。
+21. 学習支援ページから、弱点別ルート・用語・記号・本体教科書との対応をすぐに確認できる。
 
 ## 学習順序
 
@@ -56,22 +80,6 @@ Core / Standard / Extended 演習
   ↓
 本体教科書へ
 ```
-
-## v1.0 で重視した追加要素
-
-v1.0 では、初回安定版として、学習導線、演習運用、品質管理、公開手順、ライセンス文書を整備しています。
-
-- v1.0 リリース監査レポート
-- 表記・用語スタイルガイド
-- 演習番号と解答番号の対応監査
-- スコープ境界監査
-- ライセンス正式化メモ
-- v1.0 リリースチェックリスト
-- 演習解答対応チェック用スクリプト
-- ITDO Inc. 統一ライセンス 文書
-- Citation metadata
-- GitHub Release用ノート
-- 公開メタデータ雛形
 
 ## 目次
 
@@ -102,20 +110,11 @@ v1.0 では、初回安定版として、学習導線、演習運用、品質管
 - [第12章 線形代数の最小限](part-3-extended/12-linear-algebra.md)
 - [第13章 並行性と形式モデルの入口](part-3-extended/13-concurrency-models.md)
 
-### ナビゲーション
+### 学習支援
 
 - [ナビゲーションガイド](navigation/navigation-guide.md)
 - [章間リンクマップ](navigation/chapter-link-map.md)
 - [本体教科書からの逆引き](navigation/main-textbook-reverse-index.md)
-
-### 用語・索引
-
-- [用語索引](reference/glossary.md)
-- [記号索引](reference/symbol-index.md)
-- [概念別逆引き](reference/concept-index.md)
-
-### 図表
-
 - [図表ガイド](visual/visual-index.md)
 - [証明・漸近記法・再帰](visual/proof-and-logic-diagrams.md)
 - [グラフ・データ構造・オートマトン](visual/graph-and-automata-diagrams.md)
@@ -131,12 +130,15 @@ v1.0 では、初回安定版として、学習導線、演習運用、品質管
 ### 例題・プロジェクト
 
 - [章別例題集](examples/worked-examples-by-chapter.md)
+- [章別レビュー問題](review/chapter-review-problems.md)
+- [章別レビュー問題 解答](review/chapter-review-solutions.md)
 - [ミニプロジェクト](projects/mini-projects.md)
 - [ミニプロジェクト採点基準](projects/project-rubrics.md)
 
 ### 評価・到達判定
 
 - [採点ルーブリック](assessment/scoring-rubric.md)
+- [採点フォーム](assessment/grading-forms.md)
 - [到達判定表](assessment/attainment-criteria.md)
 - [章末確認チェック](assessment/chapter-exit-checks.md)
 - [弱点別リカバリールート](assessment/recovery-routes.md)
@@ -158,37 +160,11 @@ v1.0 では、初回安定版として、学習導線、演習運用、品質管
 - [統合到達確認テスト](exercises/integrated-readiness-test.md)
 - [統合到達確認テスト 解答](exercises/integrated-readiness-solutions.md)
 
+### 用語・索引
 
-### 運用
-
-- [教員・研修担当者向け運用ガイド](operations/instructor-guide.md)
-- [コホート運用ガイド](operations/cohort-operations-guide.md)
-- [レビュー会・輪読会の進行手順](operations/reading-group-facilitation.md)
-- [課題提出フォーマット](operations/assignment-submission-format.md)
-- [受講者別進捗管理テンプレート](operations/learner-progress-template.md)
-- [リリース手順](operations/release-process.md)
-- [コントリビューションガイド](operations/contribution-guide.md)
-- [ライセンス・引用ポリシー](operations/license-and-citation-policy.md)
-- [メンテナンス・プレイブック](operations/maintenance-playbook.md)
-
-### 監査・正式公開準備
-
-- [v1.0 リリース候補監査レポート](audit/v1-release-candidate-audit.md)
-- [表記・用語スタイルガイド](audit/style-and-terminology.md)
-- [演習番号と解答番号の対応監査](audit/exercise-solution-mapping.md)
-- [スコープ境界監査](audit/scope-boundary-audit.md)
-- [ライセンス正式化メモ](audit/license-finalization.md)
-- [v1.0 リリースチェックリスト](audit/release-checklist-v1.md)
-
-### テンプレート
-
-- [課題提出テンプレート](forms/assignment-submission.md)
-- [レビュー会議事録テンプレート](forms/review-meeting-notes.md)
-- [リリースチェックリスト](forms/release-checklist.md)
-- [Issueテンプレート](forms/issue-template.md)
-- [Pull Requestテンプレート](forms/pull-request-template.md)
-- [受講者別進捗CSV](forms/learner-progress.csv)
-- [コホートダッシュボードCSV](forms/cohort-dashboard.csv)
+- [用語索引](reference/glossary.md)
+- [記号索引](reference/symbol-index.md)
+- [概念別逆引き](reference/concept-index.md)
 
 ### 付録
 
@@ -196,21 +172,18 @@ v1.0 では、初回安定版として、学習導線、演習運用、品質管
 - [証明テンプレート集](appendix/proof-templates.md)
 - [本体教科書との対応表](appendix/mapping-to-main-textbook.md)
 
+## 利用と更新情報
 
-## v1.0 の追加導線
+- 本体教科書: [理論計算機科学教科書](https://itdojp.github.io/theoretical-computer-science-textbook/)
+- リポジトリ: [itdojp/theoretical-computer-science-prerequisites-book](https://github.com/itdojp/theoretical-computer-science-prerequisites-book)
+- 更新・修正提案: GitHub Issues / Pull Requests
 
-- 監査全体: [v1.0 リリース候補監査レポート](audit/v1-release-candidate-audit.md)
-- 表記統一: [表記・用語スタイルガイド](audit/style-and-terminology.md)
-- 解答対応: [演習番号と解答番号の対応監査](audit/exercise-solution-mapping.md)
-- スコープ確認: [スコープ境界監査](audit/scope-boundary-audit.md)
-- ライセンス確認: [ライセンス正式化メモ](audit/license-finalization.md)
-- リリース判定: [v1.0 リリースチェックリスト](audit/release-checklist-v1.md)
-- 更新時の品質確認: [CIと品質管理](quality/ci-and-quality-control.md)
+## ライセンス
 
-### リリース
+本書は ITDO Inc. の統一ライセンスに従います。非営利利用は Creative Commons BY-NC-SA 4.0、商用利用は別途契約です。
 
-- [公開メタデータ](release/release-metadata.md)
-- [GitHub Release Notes](release/github-release-notes-v1.0.md)
-- [公開手順](release/publication-guide.md)
-- [v1.0 最終監査メモ](release/final-release-audit.md)
+## フィードバックとリポジトリ資料
+
+- 誤り指摘・改善提案: [GitHub Issues](https://github.com/itdojp/theoretical-computer-science-prerequisites-book/issues)
+- 本文に直接不要なリリース、監査、保守、テンプレート類は、書籍サイトの主導線から外し、[GitHub リポジトリ](https://github.com/itdojp/theoretical-computer-science-prerequisites-book)で管理します。
 
