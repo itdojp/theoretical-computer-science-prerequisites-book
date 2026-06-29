@@ -15,6 +15,7 @@ CODE_FENCE_RE = re.compile(r"^\s*```")
 
 IGNORE_SCHEMES = {"http", "https", "mailto", "tel", "sandbox"}
 EXCLUDED_SITE_DIRS = {"audit", "release", "operations", "forms", "quality"}
+EXPECTED_BASEURL = "/theoretical-computer-science-prerequisites-book"
 
 
 def iter_markdown_files() -> list[Path]:
@@ -89,8 +90,11 @@ def check_search_data() -> list[str]:
     except json.JSONDecodeError as exc:
         return [f"docs/assets/search-data.json is invalid JSON: {exc}"]
     baseurl = data.get("baseurl")
-    if baseurl != "/theoretical-computer-science-prerequisites-book":
-        errors.append("search-data baseurl must match the GitHub Pages project baseurl")
+    if baseurl != EXPECTED_BASEURL:
+        errors.append(
+            f"search-data baseurl must match the GitHub Pages project baseurl: "
+            f"{baseurl!r} != {EXPECTED_BASEURL!r}"
+        )
     items = data.get("items")
     if not isinstance(items, list) or not items:
         return errors + ["search-data items must be a non-empty list"]
@@ -104,7 +108,7 @@ def check_search_data() -> list[str]:
         if source not in by_source:
             errors.append(f"search-data source_path does not exist: {source!r}")
             continue
-        expected = f"{baseurl}{by_source[source]}"
+        expected = f"{EXPECTED_BASEURL}{by_source[source]}"
         if url != expected:
             errors.append(f"search-data url mismatch for {source}: {url!r} != {expected!r}")
     return errors
