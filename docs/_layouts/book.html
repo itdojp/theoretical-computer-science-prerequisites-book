@@ -51,7 +51,7 @@
                         const legacy = localStorage.getItem('theme');
                         if (legacy) {
                             t = legacy;
-                            localStorage.setItem(k, t);
+                            localStorage.setItem(NEW_KEY, t);
                         }
                     }
                 } catch (_) {}

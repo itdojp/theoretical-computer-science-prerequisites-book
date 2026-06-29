@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -14,6 +15,7 @@ CODE_FENCE_RE = re.compile(r"^\s*```")
 
 IGNORE_SCHEMES = {"http", "https", "mailto", "tel", "sandbox"}
 EXCLUDED_SITE_DIRS = {"audit", "release", "operations", "forms", "quality"}
+EXPECTED_BASEURL = "/theoretical-computer-science-prerequisites-book"
 
 
 def iter_markdown_files() -> list[Path]:
@@ -64,6 +66,51 @@ def check_markdown_links() -> list[str]:
                 continue
             if not candidate.exists():
                 errors.append(f"{md}: missing link target: {match.group(1)} -> {candidate}")
+    return errors
+
+
+def site_url_for_doc(path: Path) -> str:
+    rel = path.relative_to(DOCS)
+    if rel.name == "index.md":
+        if str(rel.parent) == ".":
+            return "/"
+        suffix = "/" + str(rel.parent).replace("\\", "/")
+    else:
+        suffix = "/" + str(rel.with_suffix("")).replace("\\", "/")
+    return suffix.rstrip("/") + "/"
+
+
+def check_search_data() -> list[str]:
+    errors: list[str] = []
+    search_path = DOCS / "assets" / "search-data.json"
+    if not search_path.exists():
+        return ["docs/assets/search-data.json is missing"]
+    try:
+        data = json.loads(search_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"docs/assets/search-data.json is invalid JSON: {exc}"]
+    baseurl = data.get("baseurl")
+    if baseurl != EXPECTED_BASEURL:
+        errors.append(
+            f"search-data baseurl must match the GitHub Pages project baseurl: "
+            f"{baseurl!r} != {EXPECTED_BASEURL!r}"
+        )
+    items = data.get("items")
+    if not isinstance(items, list) or not items:
+        return errors + ["search-data items must be a non-empty list"]
+    by_source = {str(p.relative_to(ROOT)).replace("\\", "/"): site_url_for_doc(p) for p in DOCS.rglob("*.md")}
+    for item in items:
+        if not isinstance(item, dict):
+            errors.append(f"search-data item must be an object: {item!r}")
+            continue
+        source = item.get("source_path")
+        url = item.get("url")
+        if source not in by_source:
+            errors.append(f"search-data source_path does not exist: {source!r}")
+            continue
+        expected = f"{EXPECTED_BASEURL}{by_source[source]}"
+        if url != expected:
+            errors.append(f"search-data url mismatch for {source}: {url!r} != {expected!r}")
     return errors
 
 
@@ -132,7 +179,7 @@ def check_jekyll_config() -> list[str]:
 
 
 def main() -> int:
-    errors = check_markdown_links() + check_jekyll_navigation() + check_jekyll_config()
+    errors = check_markdown_links() + check_jekyll_navigation() + check_jekyll_config() + check_search_data()
     if errors:
         for error in errors:
             print(error, file=sys.stderr)

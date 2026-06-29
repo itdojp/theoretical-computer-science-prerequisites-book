@@ -87,7 +87,7 @@
     },
     {
       "title": "演習難易度インデックス",
-      "url": "/theoretical-computer-science-prerequisites-book/exercises/difficulty-/",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/difficulty-index/",
       "source_path": "docs/exercises/difficulty-index.md",
       "excerpt": "演習難易度インデックス 難易度ラベル | ラベル | 意味 | 目標 | |---|---|---| | A | 記号・定義確認 | 用語と記号を正しく読む | | B | 計算・変形 | 手順に従って計算する | | C | 説明・比較 | 概念の違いを説明する | | D | 証明・解析 | 定義から証明・計算量解析を行う | | E | 接続・応用 | 本体教科書で出る形に接続する | Core 演習の難易度配分 | 領域 | 推"
     },
@@ -117,7 +117,7 @@
     },
     {
       "title": "難易度ラベル付き演習インデックス",
-      "url": "/theoretical-computer-science-prerequisites-book/exercises/labeled-exercise-/",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/labeled-exercise-index/",
       "source_path": "docs/exercises/labeled-exercise-index.md",
       "excerpt": "難易度ラベル付き演習インデックス ラベル定義 | ラベル | 意味 | 典型的な採点観点 | |---|---|---| | A | 基本 | 定義・記号・単純計算が正確 | | B | 標準 | 複数の概念を組み合わせて説明できる | | C | 発展 | 証明、設計、抽象化が必要 | | D | 実装 | 実行可能なコード、擬似コード、テストが必要 | | E | 接続 | 本体教科書の概念へ接続できる | Core 演習 | 問題"
     },
@@ -171,7 +171,7 @@
     },
     {
       "title": "本体教科書からの逆引き",
-      "url": "/theoretical-computer-science-prerequisites-book/navigation/main-textbook-reverse-/",
+      "url": "/theoretical-computer-science-prerequisites-book/navigation/main-textbook-reverse-index/",
       "source_path": "docs/navigation/main-textbook-reverse-index.md",
       "excerpt": "本体教科書からの逆引き 本体教科書の章を先に選び、必要な前提だけを逆引きするためのページ。 | 本体教科書の章 | 先に確認する前提章 | 確認観点 | |---|---|---| | 第1章 数学的基礎 | 第1章../part-1-core/01-sets-logic.md, 第2章../part-1-core/02-functions-relations.md, 第3章../part-1-core/03-proofs.md | 集"
     },
@@ -297,7 +297,7 @@
     },
     {
       "title": "概念別逆引き",
-      "url": "/theoretical-computer-science-prerequisites-book/reference/concept-/",
+      "url": "/theoretical-computer-science-prerequisites-book/reference/concept-index/",
       "source_path": "docs/reference/concept-index.md",
       "excerpt": "概念別逆引き 詰まり方から読む章を選ぶための逆引き。 | 詰まり方 | 読む章 | 確認観点 | |---|---|---| | 証明を書けない | 第1章../part-1-core/01-sets-logic.md, 第2章../part-1-core/02-functions-relations.md, 第3章../part-1-core/03-proofs.md | 定義展開、対偶、背理法、帰納法、反例を確認する。 | | O記"
     },
@@ -309,7 +309,7 @@
     },
     {
       "title": "記号索引",
-      "url": "/theoretical-computer-science-prerequisites-book/reference/symbol-/",
+      "url": "/theoretical-computer-science-prerequisites-book/reference/symbol-index/",
       "source_path": "docs/reference/symbol-index.md",
       "excerpt": "記号索引 各章で使う主要記号の早見表。章本文の「この章で使う記号」と同じ情報を横断的に確認する。 | 記号 | 意味 | 関連章 | |---|---|---| | x ∈ A | x が集合 A の要素である | 第1章 集合と論理../part-1-core/01-sets-logic.md | | A ⊆ B | A が B の部分集合である | 第1章 集合と論理../part-1-core/01-sets-logic.md |"
     },
@@ -345,7 +345,7 @@
     },
     {
       "title": "図表ガイド",
-      "url": "/theoretical-computer-science-prerequisites-book/visual/visual-/",
+      "url": "/theoretical-computer-science-prerequisites-book/visual/visual-index/",
       "source_path": "docs/visual/visual-index.md",
       "excerpt": "図表ガイド このページでは、本文で詰まりやすい概念を静的 SVG 図で補強する。Jekyll の標準 Markdown だけで表示できるように、Mermaid 依存にはしていない。 図表一覧 | 図 | 対象章 | 使い方 | |---|---|---| | 証明を書くときの基本フロー | 第3章 | 証明問題で最初に見る | | 代表的な成長率 | 第4章 | O記法の大小比較で見る | | 再帰呼び出しとスタック | 第5章 | 再"
     }
