@@ -180,7 +180,7 @@ Core / Standard / Extended 演習
 
 ## ライセンス
 
-本書は ITDO Inc. の統一ライセンスに従います。非営利利用は Creative Commons BY-NC-SA 4.0、商用利用は別途契約です。
+本書は ITDO Inc. の統一ライセンスに従います。非営利利用は CC BY-NC-SA 4.0、商用利用は別途契約です。
 
 ## フィードバックとリポジトリ資料
 
