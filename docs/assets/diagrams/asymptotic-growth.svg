@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="100%" height="100%" fill="#fff"/>
+  <text x="30" y="35" font-size="22" font-family="sans-serif">代表的な成長率の順序</text>
+  <line x1="80" y1="300" x2="840" y2="300" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="300" x2="80" y2="70" stroke="#333" stroke-width="2"/>
+  <text x="835" y="325" font-size="14" font-family="sans-serif">n</text>
+  <text x="32" y="78" font-size="14" font-family="sans-serif">cost</text>
+  <polyline points="90,292 200,288 320,282 440,276 560,270 680,264 820,257" fill="none" stroke="#777" stroke-width="3"/>
+  <text x="705" y="255" font-size="15" font-family="sans-serif">log n</text>
+  <polyline points="90,290 200,265 320,238 440,210 560,182 680,154 820,120" fill="none" stroke="#555" stroke-width="3"/>
+  <text x="705" y="142" font-size="15" font-family="sans-serif">n</text>
+  <polyline points="90,290 200,258 320,218 440,172 560,121 680,82 820,50" fill="none" stroke="#333" stroke-width="3"/>
+  <text x="705" y="80" font-size="15" font-family="sans-serif">n log n</text>
+  <polyline points="90,290 200,278 320,250 440,205 560,145 680,86 760,35" fill="none" stroke="#111" stroke-width="3"/>
+  <text x="575" y="118" font-size="15" font-family="sans-serif">n²</text>
+  <polyline points="90,290 140,287 190,282 240,273 290,257 340,230 390,185 440,115 480,45" fill="none" stroke="#000" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="440" y="70" font-size="15" font-family="sans-serif">2ⁿ</text>
+  <text x="100" y="335" font-size="14" font-family="sans-serif">O記法では、十分大きい n で定数倍まで許して比較する。</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="420" viewBox="0 0 850 420">
+  <rect width="100%" height="100%" fill="#fff"/>
+  <text x="30" y="35" font-size="22" font-family="sans-serif">再帰呼び出しとスタック</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker></defs>
+  <g font-family="monospace" font-size="17" fill="#111">
+    <text x="40" y="85">fact(4)</text>
+    <text x="40" y="130">= 4 * fact(3)</text>
+    <text x="40" y="175">= 4 * 3 * fact(2)</text>
+    <text x="40" y="220">= 4 * 3 * 2 * fact(1)</text>
+    <text x="40" y="265">= 4 * 3 * 2 * 1 * fact(0)</text>
+    <text x="40" y="310">= 4 * 3 * 2 * 1 * 1</text>
+    <text x="40" y="355">= 24</text>
+  </g>
+  <g stroke="#333" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="245" y1="80" x2="245" y2="120"/>
+    <line x1="245" y1="125" x2="245" y2="165"/>
+    <line x1="245" y1="170" x2="245" y2="210"/>
+    <line x1="245" y1="215" x2="245" y2="255"/>
+  </g>
+  <g font-family="sans-serif" font-size="15" fill="#f8f8f8" stroke="#333">
+    <rect x="520" y="70" width="220" height="45"/><text x="540" y="98" fill="#111" stroke="none">fact(4): n=4</text>
+    <rect x="520" y="115" width="220" height="45"/><text x="540" y="143" fill="#111" stroke="none">fact(3): n=3</text>
+    <rect x="520" y="160" width="220" height="45"/><text x="540" y="188" fill="#111" stroke="none">fact(2): n=2</text>
+    <rect x="520" y="205" width="220" height="45"/><text x="540" y="233" fill="#111" stroke="none">fact(1): n=1</text>
+    <rect x="520" y="250" width="220" height="45"/><text x="540" y="278" fill="#111" stroke="none">fact(0): return 1</text>
+  </g>
+  <text x="520" y="330" font-size="15" font-family="sans-serif">停止条件がない再帰は証明できない。</text>
+  <text x="520" y="355" font-size="15" font-family="sans-serif">帰納法の基底部と再帰の停止条件は対応する。</text>
+</svg>

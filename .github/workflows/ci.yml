@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check Markdown links
+        run: python scripts/check_links.py
+
+      - name: Check exercise labels
+        run: python scripts/check_exercise_labels.py
+
+      - name: Check exercise/solution mappings
+        run: python scripts/check_exercise_solution_mapping.py
+
+      - name: Run pytest
+        run: python -m pytest
+
+      - name: Run legacy smoke test
+        run: python examples/python/tests.py
+
+      - name: Build MkDocs
+        run: mkdocs build --strict

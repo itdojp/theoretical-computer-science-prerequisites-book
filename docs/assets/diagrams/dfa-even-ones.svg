@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300">
+  <rect width="100%" height="100%" fill="#fff"/>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker></defs>
+  <text x="30" y="35" font-size="22" font-family="sans-serif">DFA: 1 の個数が偶数である 0/1 文字列</text>
+  <g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <line x1="90" y1="150" x2="180" y2="150"/>
+    <path d="M245 130 C330 60, 430 60, 515 130"/>
+    <path d="M515 170 C430 240, 330 240, 245 170"/>
+    <path d="M200 120 C145 75, 145 225, 200 180"/>
+    <path d="M560 120 C615 75, 615 225, 560 180"/>
+  </g>
+  <g font-family="sans-serif" font-size="17" stroke="#333" stroke-width="2" fill="#f8f8f8">
+    <circle cx="220" cy="150" r="42"/><circle cx="220" cy="150" r="35"/>
+    <text x="201" y="156" fill="#111" stroke="none">Even</text>
+    <circle cx="540" cy="150" r="42"/><text x="526" y="156" fill="#111" stroke="none">Odd</text>
+  </g>
+  <g font-family="sans-serif" font-size="16" fill="#111">
+    <text x="118" y="142">start</text><text x="372" y="88">1</text><text x="372" y="235">1</text><text x="152" y="88">0</text><text x="615" y="88">0</text>
+    <text x="80" y="265">状態は「これまでに読んだ 1 の個数の偶奇」だけを記憶する。</text>
+  </g>
+</svg>

@@ -1,0 +1,2 @@
+learner_id,cohort_id,diagnostic_score,core_status,standard_status,extended_status,review_score_avg,integrated_test_score,mini_project_score,readiness_status,next_action,reviewer,last_updated
+L001,C2026-01,0,not_started,not_started,not_started,0,0,0,not_ready,run diagnosis,,YYYY-MM-DD
