@@ -23,7 +23,7 @@
 - [ ] python scripts/check_exercise_labels.py
 - [ ] python examples/python/tests.py
 - [ ] python -m pytest
-- [ ] mkdocs build --strict
+- [ ] bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
 
 ## ライセンス・引用確認
 

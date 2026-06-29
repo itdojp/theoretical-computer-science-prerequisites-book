@@ -21,7 +21,7 @@
 | 公開URL | https://itdojp.github.io/theoretical-computer-science-prerequisites-book/ | GitHub Pages 公開URL |
 | 問い合わせ先 | knowledge@itdo.jp / GitHub Issues | 運用方針に応じて変更可 |
 | 組織名義 | ITDO Inc.（株式会社アイティードゥ） | 確定 |
-| `site_url` | https://itdojp.github.io/theoretical-computer-science-prerequisites-book/ | `mkdocs.yml` に設定済み |
+| `url` / `baseurl` | https://itdojp.github.io / /theoretical-computer-science-prerequisites-book | `docs/_config.yml` に設定済み |
 
 ## リリース判定
 
@@ -32,6 +32,6 @@ v1.0 は、次の範囲を初回安定版として固定します。
 - 前提診断、到達判定、readiness checklist の運用導線。
 - 演習ID、難易度ラベル、解答IDの対応。
 - Python examples のファイル構成。
-- MkDocsナビゲーションの大枠。
+- Jekyll ナビゲーションの大枠。
 
 v1.0以降は、既存URLを壊す章番号変更・ファイル名変更を原則避けます。

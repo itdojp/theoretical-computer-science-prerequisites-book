@@ -40,10 +40,10 @@ python scripts/check_exercise_labels.py
 python scripts/check_exercise_solution_mapping.py
 python examples/python/tests.py
 python -m pytest
-mkdocs build --strict
+bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
 ```
 
-`mkdocs build --strict` はローカルまたはCI環境で実行します。
+`bundle exec jekyll build --source docs --config docs/_config.yml --destination _site` はローカルまたはCI環境で実行します。
 
 ## 手動確認項目
 
@@ -51,7 +51,7 @@ mkdocs build --strict
 |---|---|
 | README | バージョン、スコープ、利用方法が更新されているか |
 | CHANGELOG | Added / Changed / Fixed が記録されているか |
-| mkdocs.yml | 新規ページが nav に含まれているか |
+| docs/_data/navigation.yml | 新規ページが公開サイトの navigation に含まれているか |
 | リンク | 相対リンクが壊れていないか |
 | 演習 | 問題番号、難易度ラベル、解答が対応しているか |
 | Python examples | tests が通るか |
@@ -103,7 +103,7 @@ python scripts/package_release.py --version v1.0 --suffix release
 - python scripts/check_exercise_labels.py
 - python examples/python/tests.py
 - python -m pytest
-- mkdocs build --strict
+- bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
 
 ### Known limitations
 

@@ -1,4 +1,4 @@
-name: Book QA (MkDocs + Examples)
+name: Book QA
 
 on:
   pull_request:
@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
           cache: pip
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
@@ -44,5 +44,14 @@ jobs:
       - name: Run legacy smoke test
         run: python examples/python/tests.py
 
-      - name: Build MkDocs
-        run: mkdocs build --strict
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1.314.0
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
+        env:
+          JEKYLL_ENV: production
+          PAGES_REPO_NWO: itdojp/theoretical-computer-science-prerequisites-book

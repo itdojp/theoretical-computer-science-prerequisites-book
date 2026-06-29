@@ -1,0 +1,87 @@
+# Reader-facing navigation for the common Jekyll book layout.
+
+introduction:
+  - title: 前提診断
+    path: /diagnosis/
+  - title: 学習ルート
+    path: /learning-path/
+
+chapters:
+  - title: "Part I: Core"
+    items:
+      - title: 第1章 集合と論理
+        path: /part-1-core/01-sets-logic/
+      - title: 第2章 関数と関係
+        path: /part-1-core/02-functions-relations/
+      - title: 第3章 証明技法
+        path: /part-1-core/03-proofs/
+      - title: 第4章 漸近記法
+        path: /part-1-core/04-asymptotic-notation/
+      - title: 第5章 擬似コードと再帰
+        path: /part-1-core/05-pseudocode-recursion/
+  - title: "Part II: Standard"
+    items:
+      - title: 第6章 グラフと木
+        path: /part-2-standard/06-graphs-trees/
+      - title: 第7章 組合せと数え上げ
+        path: /part-2-standard/07-counting/
+      - title: 第8章 データ構造と基本アルゴリズム
+        path: /part-2-standard/08-data-structures/
+      - title: 第9章 形式言語の入口
+        path: /part-2-standard/09-formal-language-primer/
+  - title: "Part III: Extended"
+    items:
+      - title: 第10章 確率の基礎
+        path: /part-3-extended/10-probability/
+      - title: 第11章 数論・代数の基礎
+        path: /part-3-extended/11-number-theory-algebra/
+      - title: 第12章 線形代数の最小限
+        path: /part-3-extended/12-linear-algebra/
+      - title: 第13章 並行性と形式モデルの入口
+        path: /part-3-extended/13-concurrency-models/
+
+additional:
+  - title: Core 演習
+    path: /exercises/core-exercises/
+  - title: Standard 演習
+    path: /exercises/standard-exercises/
+  - title: Extended 演習
+    path: /exercises/extended-exercises/
+  - title: 章末確認チェック
+    path: /assessment/chapter-exit-checks/
+  - title: 統合到達確認テスト
+    path: /exercises/integrated-readiness-test/
+  - title: 章別レビュー問題
+    path: /review/chapter-review-problems/
+  - title: ミニプロジェクト
+    path: /projects/mini-projects/
+  - title: 章別例題集
+    path: /examples/worked-examples-by-chapter/
+
+resources:
+  - title: Python実装ノート
+    path: /python/python-implementation-notes/
+  - title: アルゴリズムとデータ構造
+    path: /python/algorithm-snippets/
+  - title: 形式言語とオートマトン
+    path: /python/automata-coding/
+  - title: 確率・数論・線形代数・状態遷移
+    path: /python/probability-linear-algebra-coding/
+  - title: 用語索引
+    path: /reference/glossary/
+  - title: 記号索引
+    path: /reference/symbol-index/
+  - title: 概念別逆引き
+    path: /reference/concept-index/
+  - title: 図表索引
+    path: /visual/visual-index/
+  - title: 本体教科書からの逆引き
+    path: /navigation/main-textbook-reverse-index/
+
+appendices:
+  - title: 付録A 記号一覧
+    path: /appendix/notation/
+  - title: 付録B 証明テンプレート集
+    path: /appendix/proof-templates/
+  - title: 付録C 本体教科書との対応表
+    path: /appendix/mapping-to-main-textbook/

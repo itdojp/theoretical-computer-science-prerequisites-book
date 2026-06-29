@@ -1,0 +1,33 @@
+{
+  "name": "theoretical-computer-science-prerequisites-book",
+  "version": "1.0.0",
+  "description": "理論計算機科学教科書へ進むための数学・証明・アルゴリズム前提教材",
+  "author": "ITDO Inc.（株式会社アイティードゥ）",
+  "license": "CC-BY-NC-SA-4.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "bundle exec jekyll serve --livereload --source docs --config docs/_config.yml --destination _site",
+    "start": "npm run dev",
+    "build": "bundle exec jekyll build --source docs --config docs/_config.yml --destination _site",
+    "check-links": "python scripts/check_links.py",
+    "test": "python scripts/check_links.py && python scripts/check_exercise_labels.py && python scripts/check_exercise_solution_mapping.py && python examples/python/tests.py && python -m pytest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itdojp/theoretical-computer-science-prerequisites-book.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/issues"
+  },
+  "homepage": "https://itdojp.github.io/theoretical-computer-science-prerequisites-book/",
+  "keywords": [
+    "book",
+    "documentation",
+    "japanese",
+    "computer-science",
+    "theory",
+    "discrete-mathematics"
+  ]
+}

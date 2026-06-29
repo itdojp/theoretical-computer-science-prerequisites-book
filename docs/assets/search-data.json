@@ -1,0 +1,353 @@
+{
+  "baseurl": "/theoretical-computer-science-prerequisites-book",
+  "items": [
+    {
+      "title": "付録C 本体教科書との対応表",
+      "url": "/theoretical-computer-science-prerequisites-book/appendix/mapping-to-main-textbook/",
+      "source_path": "docs/appendix/mapping-to-main-textbook.md",
+      "excerpt": "付録C 本体教科書との対応表 目的 この対応表は、本教材の各章が『理論計算機科学教科書』のどの章の前提を補うかを示します。 対応表 | 本教材 | 補う前提 | 本体教科書で主に使う箇所 | |---|---|---| | 第1章 集合と論理 | 集合、部分集合、集合演算、命題、含意、量化記号 | 第1章、全章の定義・証明 | | 第2章 関数と関係 | 関数、単射、全射、同値関係、半順序、到達可能性 | 第1章、第3章、第4章、第9章"
+    },
+    {
+      "title": "付録A 記号一覧",
+      "url": "/theoretical-computer-science-prerequisites-book/appendix/notation/",
+      "source_path": "docs/appendix/notation.md",
+      "excerpt": "付録A 記号一覧 集合 | 記号 | 意味 | |---|---| | x ∈ A | x は A の要素 | | x ∉ A | x は A の要素ではない | | A ⊆ B | A は B の部分集合 | | A ⊂ B | A は B の真部分集合 | | A = B | A と B は同じ要素を持つ | | ∅ | 空集合 | | A ∪ B | 和集合 | | A ∩ B | 共通部分 | | A \\ B | 差集合 | |"
+    },
+    {
+      "title": "付録B 証明テンプレート集",
+      "url": "/theoretical-computer-science-prerequisites-book/appendix/proof-templates/",
+      "source_path": "docs/appendix/proof-templates.md",
+      "excerpt": "付録B 証明テンプレート集 1. 直接証明 対象: P - Q 2. 対偶証明 対象: P - Q 3. 背理法 4. 両包含による集合等号 対象: A = B 5. 存在命題の証明 対象: ∃x Px 6. 普遍命題の証明 対象: ∀x Px 7. 反例 対象: ∀x Px の否定 8. 数学的帰納法 対象: 自然数 n に関する命題 Pn 9. 強い帰納法 10. 構造帰納法 対象: 再帰的に定義された対象 11. 同値関係の証明 "
+    },
+    {
+      "title": "到達判定表",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/attainment-criteria/",
+      "source_path": "docs/assessment/attainment-criteria.md",
+      "excerpt": "到達判定表 使い方 この表は、各パートを完了したかを判定するための基準です。章を読んだだけでは完了としません。説明できる、証明できる、計算できる、実装または擬似コード化できるのいずれかで確認してください。 Core 到達判定 | 項目 | 到達条件 | 確認方法 | |---|---|---| | 集合 | ⊆, ∪, ∩, \\, PA を説明できる | 3つの集合計算問題を解く | | 論理 | 含意、対偶、量化の否定を扱える | 命"
+    },
+    {
+      "title": "章末確認チェック",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/chapter-exit-checks/",
+      "source_path": "docs/assessment/chapter-exit-checks.md",
+      "excerpt": "章末確認チェック 使い方 各章を読んだ後、該当する確認問題を解いてください。各章10点満点です。8点以上を通過、6〜7点を要復習、5点以下を再学習とします。 解答は短くてよいですが、定義を問う問題では用語だけでなく条件まで書いてください。 --- 第1章 集合と論理 1. A ⊆ B の定義を量化記号で書け。 2. A = {1,2,3}, B = {3,4} のとき A∪B, A∩B, A\\B を求めよ。 3. ¬P∧Q を書き換えよ"
+    },
+    {
+      "title": "採点フォーム",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/grading-forms/",
+      "source_path": "docs/assessment/grading-forms.md",
+      "excerpt": "採点フォーム 目的 このページは、前提診断、章別レビュー、演習、統合到達確認テスト、ミニプロジェクトを一貫した形式で採点するためのフォームです。複数の受講者を扱う場合、grading-sheet.csv をコピーして運用してください。 共通採点スケール | 点 | 判定 | 基準 | |---:|---|---| | 4 | 完全 | 定義、計算、証明、説明が正確。不要な飛躍がない | | 3 | 概ね可 | 主要な考え方は正しいが、記"
+    },
+    {
+      "title": "学習チェックリスト",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/learning-checklists/",
+      "source_path": "docs/assessment/learning-checklists.md",
+      "excerpt": "学習チェックリスト 学習者が進捗を消し込むためのチェックリスト。Markdown のタスクリストとして使う。 全体ワークフロー - 前提診断80問を解く。 - 採点ルーブリックで採点する。 - 弱点別リカバリールートを確認する。 - 必要章を読む。 - 章末確認チェックを解く。 - 対応する演習を解く。 - 統合到達確認テストを解く。 - ミニプロジェクトを1つ以上実装する。 - 本体教科書 readiness checklist を確"
+    },
+    {
+      "title": "本体教科書 readiness checklist",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/main-textbook-readiness/",
+      "source_path": "docs/assessment/main-textbook-readiness.md",
+      "excerpt": "本体教科書 readiness checklist 目的 本体教科書の各章へ入る前に、該当する前提が揃っているかを確認します。ここで「いいえ」が多い場合は、該当する補助教材の章へ戻ってください。 第1章 数学的基礎へ進む前 | 確認項目 | 必要章 | |---|---| | 集合、部分集合、冪集合を説明できる | 第1章 | | 命題論理と述語論理の記号を読める | 第1章 | | 量化記号の否定を変形できる | 第1章 | | 関数"
+    },
+    {
+      "title": "弱点別リカバリールート",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/recovery-routes/",
+      "source_path": "docs/assessment/recovery-routes.md",
+      "excerpt": "弱点別リカバリールート 使い方 前提診断または演習の失点から、該当するリカバリールートを選びます。総合点よりも、どの領域で落としたかを重視します。 領域別ルート一覧 | 弱点 | 診断問題 | 優先章 | 演習 | 再判定 | |---|---|---|---|---| | 集合・論理 | Q1-Q6 | 第1章 | Core 演習 A | 章末確認 1 | | 関数・関係 | Q7-Q12 | 第2章 | Core 演習 B | 章末"
+    },
+    {
+      "title": "採点ルーブリック",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/scoring-rubric/",
+      "source_path": "docs/assessment/scoring-rubric.md",
+      "excerpt": "採点ルーブリック 目的 このルーブリックは、前提診断・章末確認・演習の採点基準を揃えるためのものです。単に正誤を見るのではなく、次の4点を分離して評価します。 1. 記号を正しく読めるか。 2. 定義を使って説明できるか。 3. 証明・計算・擬似コードを自力で構成できるか。 4. 本体教科書で出る形へ接続できるか。 共通採点スケール 説明問題・証明問題・計算量問題は、原則として4点満点で採点します。 | 点 | 判定 | 基準 | |-"
+    },
+    {
+      "title": "前提診断 80問",
+      "url": "/theoretical-computer-science-prerequisites-book/diagnosis/",
+      "source_path": "docs/diagnosis.md",
+      "excerpt": "前提診断 80問 使い方 - 制限時間は 120〜150分。 - 参考資料を見ずに解く。 - 各問1点、合計80点。 - 証明問題は、結論だけでなく理由が書けていれば正答。 - 実装問題は、擬似コードでもPythonでもよい。 - 採点後は assessment/scoring-rubric.md と assessment/recovery-routes.md を使って、領域別に補強する。 判定 | 得点 | 判定 | 推奨対応 | |"
+    },
+    {
+      "title": "章別例題集",
+      "url": "/theoretical-computer-science-prerequisites-book/examples/worked-examples-by-chapter/",
+      "source_path": "docs/examples/worked-examples-by-chapter.md",
+      "excerpt": "章別例題集 各章につき、最低1問の「定義から解く」例を置く。解答は短くしているが、必ず定義に戻る。 第1章 集合と論理 問題: A ⊆ B と B ⊆ C ならば A ⊆ C を示せ。 解答: 任意の x ∈ A を取る。A ⊆ B より x ∈ B。さらに B ⊆ C より x ∈ C。したがって任意の x ∈ A について x ∈ C なので、A ⊆ C。 第2章 関数と関係 問題: 整数上の関係 a R b ⇔ a-b が偶数であ"
+    },
+    {
+      "title": "漸近記法ドリル",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/asymptotic-drills/",
+      "source_path": "docs/exercises/asymptotic-drills.md",
+      "excerpt": "漸近記法ドリル 目的 第4章「漸近記法」を定着させるための追加問題です。結論だけでなく、反復回数、総和、再帰式、または定義からの証明を書いてください。 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が必要。 - D 実装: 実行可能なコードまたは明確な擬似コードが必要。 - E 接続: 本体教科書の概念へ橋渡しする。 A. 定義から示"
+    },
+    {
+      "title": "Core 演習",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/core-exercises/",
+      "source_path": "docs/exercises/core-exercises.md",
+      "excerpt": "Core 演習 目的 この演習は、本体教科書に入る前の最低限の処理能力を確認するためのものです。単に答えを出すだけでなく、定義を使って説明してください。 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が必要。 - D 実装: 実行可能なコードまたは明確な擬似コードが必要。 - E 接続: 本体教科書の概念へ橋渡しする。 Level 1"
+    },
+    {
+      "title": "演習難易度インデックス",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/difficulty-/",
+      "source_path": "docs/exercises/difficulty-index.md",
+      "excerpt": "演習難易度インデックス 難易度ラベル | ラベル | 意味 | 目標 | |---|---|---| | A | 記号・定義確認 | 用語と記号を正しく読む | | B | 計算・変形 | 手順に従って計算する | | C | 説明・比較 | 概念の違いを説明する | | D | 証明・解析 | 定義から証明・計算量解析を行う | | E | 接続・応用 | 本体教科書で出る形に接続する | Core 演習の難易度配分 | 領域 | 推"
+    },
+    {
+      "title": "Extended 演習",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/extended-exercises/",
+      "source_path": "docs/exercises/extended-exercises.md",
+      "excerpt": "Extended 演習 目的 この演習は、本体教科書の情報理論・暗号・並行計算を読むための前提を確認するものです。 対象範囲: - 第10章 確率の基礎 - 第11章 数論・代数の基礎 - 第12章 線形代数の最小限 - 第13章 並行性と形式モデルの入口 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が必要。 - D 実装: 実行可"
+    },
+    {
+      "title": "Extended 演習 解答",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/extended-solutions/",
+      "source_path": "docs/exercises/extended-solutions.md",
+      "excerpt": "Extended 演習 解答 J. 確率の基礎 E1. 各回で H/T の2通りがあるので 2^3=8。 E2. 表が2回の列は C3,2=3 個。全体は8個なので 3/8。 E3. A={2,4,6}, B={4,5,6}, A∩B={4,6}。したがって PrA|B=2/3。 E4. 独立である。PrAPrB=1/21/3=1/6=PrA∩B。 E5. 独立ではない。PrA∩B=0 だが PrAPrB=1/6。 E6. PrA|B="
+    },
+    {
+      "title": "統合到達確認テスト 解答",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/integrated-readiness-solutions/",
+      "source_path": "docs/exercises/integrated-readiness-solutions.md",
+      "excerpt": "統合到達確認テスト 解答 A. Core A1. ∀x x∈A → x∈B。 A2. ∃x∈S, Px ∧ ¬Qx。 A3. ¬Q→¬P と ¬P∨Q。 A4. ∀x,y∈A, fx=fy → x=y。 A5. 反射律、対称律、推移律。 A6. 半順序は任意の2要素が比較可能とは限らない。全順序は任意の2要素が比較可能である。 A7. n が奇数なので n=2k+1 と書ける。すると n^2=2k+1^2=4k^2+4k+1=22k^2"
+    },
+    {
+      "title": "統合到達確認テスト 50問",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/integrated-readiness-test/",
+      "source_path": "docs/exercises/integrated-readiness-test.md",
+      "excerpt": "統合到達確認テスト 50問 使い方 - 制限時間は120分。 - 参考資料を見ずに解く。 - 各問1点。証明問題は、主要な論理が書けていれば正答。 - 43点以上で本体教科書へ進行可。 - 証明問題が半分未満の場合は、総合点に関係なく第3章へ戻る。 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が必要。 - D 実装: 実行可能なコー"
+    },
+    {
+      "title": "難易度ラベル付き演習インデックス",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/labeled-exercise-/",
+      "source_path": "docs/exercises/labeled-exercise-index.md",
+      "excerpt": "難易度ラベル付き演習インデックス ラベル定義 | ラベル | 意味 | 典型的な採点観点 | |---|---|---| | A | 基本 | 定義・記号・単純計算が正確 | | B | 標準 | 複数の概念を組み合わせて説明できる | | C | 発展 | 証明、設計、抽象化が必要 | | D | 実装 | 実行可能なコード、擬似コード、テストが必要 | | E | 接続 | 本体教科書の概念へ接続できる | Core 演習 | 問題"
+    },
+    {
+      "title": "証明ドリル",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/proof-drills/",
+      "source_path": "docs/exercises/proof-drills.md",
+      "excerpt": "証明ドリル 目的 第3章「証明技法」を定着させるための追加問題です。各問題では、次の順に書いてください。 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が必要。 - D 実装: 実行可能なコードまたは明確な擬似コードが必要。 - E 接続: 本体教科書の概念へ橋渡しする。 A. 定義展開 1. A証明 A⊆B かつ C⊆D ならば A"
+    },
+    {
+      "title": "擬似コード・再帰ドリル",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/pseudocode-recursion-drills/",
+      "source_path": "docs/exercises/pseudocode-recursion-drills.md",
+      "excerpt": "擬似コード・再帰ドリル 目的 第5章「擬似コードと再帰」を定着させるための追加問題です。コードを実行せず、手で状態変化を追う訓練をします。 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が必要。 - D 実装: 実行可能なコードまたは明確な擬似コードが必要。 - E 接続: 本体教科書の概念へ橋渡しする。 A. 状態を追う 1. A再"
+    },
+    {
+      "title": "Core 演習 完全解答",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/solutions/",
+      "source_path": "docs/exercises/solutions.md",
+      "excerpt": "Core 演習 完全解答 採点方針 - 定義問題は、用語を日本語で説明できていれば可。 - 証明問題は、結論だけでは不可。定義展開、仮定、結論への推論が必要。 - 計算量問題は、O だけでなく、可能なら Θ と根拠を書く。 - 実装問題は Python 例を示すが、同等の擬似コードでも可。 --- Level 1: 記号を読む 集合・論理 1. x∈A: x は A の要素。 x∉A: x は A の要素ではない。 A⊆B: A のすべ"
+    },
+    {
+      "title": "Standard 演習",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/standard-exercises/",
+      "source_path": "docs/exercises/standard-exercises.md",
+      "excerpt": "Standard 演習 目的 この演習は、第7章から第9章までの内容を確認するためのものです。 対象範囲: - 組合せと数え上げ - データ構造と基本アルゴリズム - 形式言語の入口 問題は手で解いてください。実装問題は Python で書いても構いませんが、擬似コードでも可とします。 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が"
+    },
+    {
+      "title": "Standard 演習 解答",
+      "url": "/theoretical-computer-science-prerequisites-book/exercises/standard-solutions/",
+      "source_path": "docs/exercises/standard-solutions.md",
+      "excerpt": "Standard 演習 解答 A. 組合せと数え上げ S1 各位置に 0 または 1 の2通りがあるので、積の法則により 2^n 個。 S2 n 個の位置から、1 を置く k 個の位置を選べばよい。したがって Cn,k 個。 S3 各要素について、部分集合に入れるか入れないかの2択がある。したがって 2^n 個。 S4 最初に n 通り、次に n-1 通り、以後同様なので n! 通り。 S5 nn-1...n-k+1 = n!/n-k!"
+    },
+    {
+      "title": "理論計算機科学を読むための数学・証明・アルゴリズム基礎",
+      "url": "/theoretical-computer-science-prerequisites-book/",
+      "source_path": "docs/index.md",
+      "excerpt": "理論計算機科学を読むための数学・証明・アルゴリズム基礎 この教材の位置づけ この教材は、理論計算機科学の本編を読むための前提を補う「前処理」です。理論計算機科学そのものの全範囲を説明する教材ではありません。 想定読者 - 理論計算機科学を学びたいが、数学記法・証明・離散数学に不安がある読者 - 実務経験はあるが、集合・論理・計算量・形式言語・確率・数論を体系的に補強したいソフトウェアエンジニア - 『理論計算機科学教科書』へ入る前に前提"
+    },
+    {
+      "title": "学習ルート",
+      "url": "/theoretical-computer-science-prerequisites-book/learning-path/",
+      "source_path": "docs/learning-path.md",
+      "excerpt": "学習ルート 基本方針 この教材は、全員が全章を同じ順序で読むための教材ではない。前提診断で弱点を特定し、必要な章だけを重点的に読む。 標準ワークフロー 得点別ルート | 前提診断の正答率 | 推奨ルート | |---:|---| | 80%以上 | 本体教科書へ進み、詰まった章だけ戻る | | 60〜79% | Core を確認し、Standard/Extended は失点領域だけ読む | | 40〜59% | Core + Stand"
+    },
+    {
+      "title": "章間リンクマップ",
+      "url": "/theoretical-computer-science-prerequisites-book/navigation/chapter-link-map/",
+      "source_path": "docs/navigation/chapter-link-map.md",
+      "excerpt": "章間リンクマップ 各章の前後関係、演習、確認先を一覧する。 | 章 | 区分 | 前 | 次 | 演習 | |---|---|---|---|---| | 第1章 集合と論理../part-1-core/01-sets-logic.md | Core | - | 第2章../part-1-core/02-functions-relations.md | Core演習../exercises/core-exercises.md | | 第"
+    },
+    {
+      "title": "本体教科書からの逆引き",
+      "url": "/theoretical-computer-science-prerequisites-book/navigation/main-textbook-reverse-/",
+      "source_path": "docs/navigation/main-textbook-reverse-index.md",
+      "excerpt": "本体教科書からの逆引き 本体教科書の章を先に選び、必要な前提だけを逆引きするためのページ。 | 本体教科書の章 | 先に確認する前提章 | 確認観点 | |---|---|---| | 第1章 数学的基礎 | 第1章../part-1-core/01-sets-logic.md, 第2章../part-1-core/02-functions-relations.md, 第3章../part-1-core/03-proofs.md | 集"
+    },
+    {
+      "title": "ナビゲーションガイド",
+      "url": "/theoretical-computer-science-prerequisites-book/navigation/navigation-guide/",
+      "source_path": "docs/navigation/navigation-guide.md",
+      "excerpt": "ナビゲーションガイド v0.8 では、本文を順番に読むだけでなく、弱点・本体教科書の章・用語・レビュー問題・品質管理から逆引きできるように導線を整備した。 使い分け | 目的 | 使うページ | |---|---| | どの章から読むか決める | 学習ルート../learning-path.md | | 章どうしの依存関係を見る | 章間リンクマップchapter-link-map.md | | 本体教科書の章から前提を逆引きする | "
+    },
+    {
+      "title": "第1章 集合と論理",
+      "url": "/theoretical-computer-science-prerequisites-book/part-1-core/01-sets-logic/",
+      "source_path": "docs/part-1-core/01-sets-logic.md",
+      "excerpt": "第1章 集合と論理 章間ナビゲーション - 前: なし - 次: 第2章 関数と関係02-functions-relations.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/symbol-index.md - 到達判定: 章末確認チェック../assessment"
+    },
+    {
+      "title": "第2章 関数と関係",
+      "url": "/theoretical-computer-science-prerequisites-book/part-1-core/02-functions-relations/",
+      "source_path": "docs/part-1-core/02-functions-relations.md",
+      "excerpt": "第2章 関数と関係 章間ナビゲーション - 前: 第1章 集合と論理01-sets-logic.md - 次: 第3章 証明技法03-proofs.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/symbol-index.md - 到達判定: 章末確認チェック../a"
+    },
+    {
+      "title": "第3章 証明技法",
+      "url": "/theoretical-computer-science-prerequisites-book/part-1-core/03-proofs/",
+      "source_path": "docs/part-1-core/03-proofs.md",
+      "excerpt": "第3章 証明技法 章間ナビゲーション - 前: 第2章 関数と関係02-functions-relations.md - 次: 第4章 漸近記法04-asymptotic-notation.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/symbol-index.md"
+    },
+    {
+      "title": "第4章 漸近記法",
+      "url": "/theoretical-computer-science-prerequisites-book/part-1-core/04-asymptotic-notation/",
+      "source_path": "docs/part-1-core/04-asymptotic-notation.md",
+      "excerpt": "第4章 漸近記法 章間ナビゲーション - 前: 第3章 証明技法03-proofs.md - 次: 第5章 擬似コードと再帰05-pseudocode-recursion.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/symbol-index.md - 到達判定: "
+    },
+    {
+      "title": "第5章 擬似コードと再帰",
+      "url": "/theoretical-computer-science-prerequisites-book/part-1-core/05-pseudocode-recursion/",
+      "source_path": "docs/part-1-core/05-pseudocode-recursion.md",
+      "excerpt": "第5章 擬似コードと再帰 章間ナビゲーション - 前: 第4章 漸近記法04-asymptotic-notation.md - 次: 第6章 グラフと木../part-2-standard/06-graphs-trees.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference"
+    },
+    {
+      "title": "第6章 グラフと木",
+      "url": "/theoretical-computer-science-prerequisites-book/part-2-standard/06-graphs-trees/",
+      "source_path": "docs/part-2-standard/06-graphs-trees.md",
+      "excerpt": "第6章 グラフと木 章間ナビゲーション - 前: 第5章 擬似コードと再帰../part-1-core/05-pseudocode-recursion.md - 次: 第7章 組合せと数え上げ07-counting.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/sy"
+    },
+    {
+      "title": "第7章 組合せと数え上げ",
+      "url": "/theoretical-computer-science-prerequisites-book/part-2-standard/07-counting/",
+      "source_path": "docs/part-2-standard/07-counting.md",
+      "excerpt": "第7章 組合せと数え上げ 章間ナビゲーション - 前: 第6章 グラフと木06-graphs-trees.md - 次: 第8章 データ構造と基本アルゴリズム08-data-structures.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/symbol-index"
+    },
+    {
+      "title": "第8章 データ構造と基本アルゴリズム",
+      "url": "/theoretical-computer-science-prerequisites-book/part-2-standard/08-data-structures/",
+      "source_path": "docs/part-2-standard/08-data-structures.md",
+      "excerpt": "第8章 データ構造と基本アルゴリズム 章間ナビゲーション - 前: 第7章 組合せと数え上げ07-counting.md - 次: 第9章 形式言語の入口09-formal-language-primer.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/symbol-"
+    },
+    {
+      "title": "第9章 形式言語の入口",
+      "url": "/theoretical-computer-science-prerequisites-book/part-2-standard/09-formal-language-primer/",
+      "source_path": "docs/part-2-standard/09-formal-language-primer.md",
+      "excerpt": "第9章 形式言語の入口 章間ナビゲーション - 前: 第8章 データ構造と基本アルゴリズム08-data-structures.md - 次: 第10章 確率の基礎../part-3-extended/10-probability.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../refe"
+    },
+    {
+      "title": "第10章 確率の基礎",
+      "url": "/theoretical-computer-science-prerequisites-book/part-3-extended/10-probability/",
+      "source_path": "docs/part-3-extended/10-probability.md",
+      "excerpt": "第10章 確率の基礎 章間ナビゲーション - 前: 第9章 形式言語の入口../part-2-standard/09-formal-language-primer.md - 次: 第11章 数論・代数の基礎11-number-theory-algebra.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md /"
+    },
+    {
+      "title": "第11章 数論・代数の基礎",
+      "url": "/theoretical-computer-science-prerequisites-book/part-3-extended/11-number-theory-algebra/",
+      "source_path": "docs/part-3-extended/11-number-theory-algebra.md",
+      "excerpt": "第11章 数論・代数の基礎 章間ナビゲーション - 前: 第10章 確率の基礎10-probability.md - 次: 第12章 線形代数の最小限12-linear-algebra.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../reference/symbol-index.md -"
+    },
+    {
+      "title": "第12章 線形代数の最小限",
+      "url": "/theoretical-computer-science-prerequisites-book/part-3-extended/12-linear-algebra/",
+      "source_path": "docs/part-3-extended/12-linear-algebra.md",
+      "excerpt": "第12章 線形代数の最小限 章間ナビゲーション - 前: 第11章 数論・代数の基礎11-number-theory-algebra.md - 次: 第13章 並行性と形式モデルの入口13-concurrency-models.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossary.md / 記号索引../refere"
+    },
+    {
+      "title": "第13章 並行性と形式モデルの入口",
+      "url": "/theoretical-computer-science-prerequisites-book/part-3-extended/13-concurrency-models/",
+      "source_path": "docs/part-3-extended/13-concurrency-models.md",
+      "excerpt": "第13章 並行性と形式モデルの入口 章間ナビゲーション - 前: 第12章 線形代数の最小限12-linear-algebra.md - 次: 本体教科書 readiness checklist../assessment/main-textbook-readiness.md - 章別マップ: 章間リンクマップ../navigation/chapter-link-map.md - 用語確認: 用語索引../reference/glossa"
+    },
+    {
+      "title": "ミニプロジェクト",
+      "url": "/theoretical-computer-science-prerequisites-book/projects/mini-projects/",
+      "source_path": "docs/projects/mini-projects.md",
+      "excerpt": "ミニプロジェクト このページでは、読解だけでなく小さな実装成果物で到達確認できるようにする。各プロジェクトは 2〜6 時間で完了できる粒度にしている。 P1. 関係チェッカー 対象章: 第1章、第2章、第3章 仕様: - 有限集合 A と二項関係 R ⊆ A × A を入力する。 - 反射律、対称律、反対称律、推移律を判定する。 - 同値関係なら同値類を出力する。 - 半順序なら Hasse 図に必要な cover relation を"
+    },
+    {
+      "title": "ミニプロジェクト採点基準",
+      "url": "/theoretical-computer-science-prerequisites-book/projects/project-rubrics/",
+      "source_path": "docs/projects/project-rubrics.md",
+      "excerpt": "ミニプロジェクト採点基準 各ミニプロジェクトは 20 点満点で採点する。 | 観点 | 配点 | 基準 | |---|---:|---| | 仕様充足 | 5 | 要求された入出力と機能を満たす | | 定義との対応 | 5 | 実装が数学的定義に対応している | | テスト | 4 | 正常系、境界例、反例を含む | | 説明 | 4 | 不変条件、停止性、計算量を説明できる | | 再現性 | 2 | 実行方法が明確で、乱数は se"
+    },
+    {
+      "title": "Python実装ノート: アルゴリズムとデータ構造",
+      "url": "/theoretical-computer-science-prerequisites-book/python/algorithm-snippets/",
+      "source_path": "docs/python/algorithm-snippets.md",
+      "excerpt": "Python実装ノート: アルゴリズムとデータ構造 このページでは、第5章〜第8章に対応する実装の読み方を整理する。 再帰のトレース 対象ファイル: 見るべき点: - 停止条件があるか。 - 引数が停止条件へ近づいているか。 - 戻り値をどの順序で組み立てているか。 最小例: 証明では、n=0 を基底部、n0 のときを帰納ステップとして扱う。 BFS 対象ファイル: BFS の目的は、無重みグラフで始点からの最短距離を求めることである。"
+    },
+    {
+      "title": "Python実装ノート: 形式言語とオートマトン",
+      "url": "/theoretical-computer-science-prerequisites-book/python/automata-coding/",
+      "source_path": "docs/python/automata-coding.md",
+      "excerpt": "Python実装ノート: 形式言語とオートマトン 対象ファイル: DFA の実装 DFA は5つ組で定義する。 Python では次のように表せる。 全域性の検査 DFA の遷移関数は、すべての状態と入力記号の組に対して定義されていなければならない。 この検査を省略すると、実装は「一部の入力で落ちるプログラム」になり、形式的な DFA ではなくなる。 読解ポイント | 観点 | 確認内容 | |---|---| | 状態の意味 | 何を"
+    },
+    {
+      "title": "Python実装ノート: 確率・数論・線形代数・状態遷移",
+      "url": "/theoretical-computer-science-prerequisites-book/python/probability-linear-algebra-coding/",
+      "source_path": "docs/python/probability-linear-algebra-coding.md",
+      "excerpt": "Python実装ノート: 確率・数論・線形代数・状態遷移 確率実験 対象ファイル: 乱数実験は直観の確認には有効だが、証明の代替にはならない。乱数を使うときは seed を固定し、理論値と実験値を区別する。 合同算術 対象ファイル: a ≡ b mod n は、a と b が n で割った余りを共有することを意味する。Python の % 演算子で確認できるが、逆元や gcd は定義から理解する必要がある。 Hamming距離 対象ファ"
+    },
+    {
+      "title": "Python実装ノート",
+      "url": "/theoretical-computer-science-prerequisites-book/python/python-implementation-notes/",
+      "source_path": "docs/python/python-implementation-notes.md",
+      "excerpt": "Python実装ノート この教材の Python 例は、理論概念を実装で検査するための補助である。ライブラリは原則として標準ライブラリだけを使う。NumPy などは線形代数の理解を補助するが、前提教材では行列演算を手で追えることを優先する。 実装方針 | 方針 | 理由 | |---|---| | 標準ライブラリ中心 | 環境差分を減らす | | 小さい入力を使う | 状態・不変条件を目で追えるようにする | | 型ヒントを付ける | "
+    },
+    {
+      "title": "概念別逆引き",
+      "url": "/theoretical-computer-science-prerequisites-book/reference/concept-/",
+      "source_path": "docs/reference/concept-index.md",
+      "excerpt": "概念別逆引き 詰まり方から読む章を選ぶための逆引き。 | 詰まり方 | 読む章 | 確認観点 | |---|---|---| | 証明を書けない | 第1章../part-1-core/01-sets-logic.md, 第2章../part-1-core/02-functions-relations.md, 第3章../part-1-core/03-proofs.md | 定義展開、対偶、背理法、帰納法、反例を確認する。 | | O記"
+    },
+    {
+      "title": "用語索引",
+      "url": "/theoretical-computer-science-prerequisites-book/reference/glossary/",
+      "source_path": "docs/reference/glossary.md",
+      "excerpt": "用語索引 理論計算機科学教科書の前提補強で頻出する用語を、章への逆リンク付きで整理する。 | 用語 | 意味 | 関連章 | |---|---|---| | 集合 | 対象をまとめたもの。理論では問題、状態、入力、言語などを集合として表す。 | 第1章 集合と論理../part-1-core/01-sets-logic.md | | 要素 | 集合に含まれる個々の対象。 | 第1章 集合と論理../part-1-core/01-sets"
+    },
+    {
+      "title": "記号索引",
+      "url": "/theoretical-computer-science-prerequisites-book/reference/symbol-/",
+      "source_path": "docs/reference/symbol-index.md",
+      "excerpt": "記号索引 各章で使う主要記号の早見表。章本文の「この章で使う記号」と同じ情報を横断的に確認する。 | 記号 | 意味 | 関連章 | |---|---|---| | x ∈ A | x が集合 A の要素である | 第1章 集合と論理../part-1-core/01-sets-logic.md | | A ⊆ B | A が B の部分集合である | 第1章 集合と論理../part-1-core/01-sets-logic.md |"
+    },
+    {
+      "title": "章別レビュー問題",
+      "url": "/theoretical-computer-science-prerequisites-book/review/chapter-review-problems/",
+      "source_path": "docs/review/chapter-review-problems.md",
+      "excerpt": "章別レビュー問題 目的 章別レビュー問題は、各章の本文・章末確認・演習を終えた後に、次章へ進む前の理解を確認するための問題です。前提診断よりも章に密着し、統合到達確認テストよりも範囲を限定しています。 採点は ../assessment/scoring-rubric.md と ../assessment/grading-forms.md を併用してください。 難易度 | ラベル | 意味 | |---|---| | A | 定義・記号・"
+    },
+    {
+      "title": "章別レビュー問題 解答・採点観点",
+      "url": "/theoretical-computer-science-prerequisites-book/review/chapter-review-solutions/",
+      "source_path": "docs/review/chapter-review-solutions.md",
+      "excerpt": "章別レビュー問題 解答・採点観点 このページは、chapter-review-problems.md の採点用メモです。完全な答案例ではなく、採点時に確認すべき要点を示します。 採点方針 - A問題: 定義・記号が正確なら満点。 - B問題: 定義展開、計算過程、論理の向きが正しければ満点。 - C問題: 証明の前提、示すべき命題、結論が明確であること。 - D問題: 正常系だけでなく、境界条件と入力前提を扱うこと。 - E問題: 本体"
+    },
+    {
+      "title": "図表: グラフ・データ構造・オートマトン",
+      "url": "/theoretical-computer-science-prerequisites-book/visual/graph-and-automata-diagrams/",
+      "source_path": "docs/visual/graph-and-automata-diagrams.md",
+      "excerpt": "図表: グラフ・データ構造・オートマトン BFS は距離ごとに層を広げる !BFS は距離ごとに層を広げる../assets/diagrams/bfs-layers.svg BFS では、始点からの距離が短い順に頂点が発見される。無重みグラフで最短距離を求められる理由は、キューが距離層の順序を保つからである。 確認すべき不変条件: Union-Find !Union-Find../assets/diagrams/union-find.s"
+    },
+    {
+      "title": "図表: 確率・符号・並行性",
+      "url": "/theoretical-computer-science-prerequisites-book/visual/probability-linear-concurrency-diagrams/",
+      "source_path": "docs/visual/probability-linear-concurrency-diagrams.md",
+      "excerpt": "図表: 確率・符号・並行性 条件付き確率の確率木 !条件付き確率の確率木../assets/diagrams/probability-tree.svg 条件付き確率は、分母となる条件で標本空間を制限する操作である。確率木では、枝を進むと掛け算になり、同じ事象へ至る枝を合計すると全確率になる。 基本公式: Hamming距離 !Hamming距離../assets/diagrams/hamming-distance.svg Hamming"
+    },
+    {
+      "title": "図表: 証明・漸近記法・再帰",
+      "url": "/theoretical-computer-science-prerequisites-book/visual/proof-and-logic-diagrams/",
+      "source_path": "docs/visual/proof-and-logic-diagrams.md",
+      "excerpt": "図表: 証明・漸近記法・再帰 証明を書くときの基本フロー !証明を書くときの基本フロー../assets/diagrams/proof-flow.svg 証明で最初に行うべきことは、使える仮定と示すべき結論を分離することである。定義を展開せずに「明らか」と書くと、証明の検査可能性が落ちる。 典型例: この場合、示すべきことは一つではない。反射律、対称律、推移律の三つである。各条件を定義から個別に示す。 代表的な成長率 !代表的な成長率."
+    },
+    {
+      "title": "図表ガイド",
+      "url": "/theoretical-computer-science-prerequisites-book/visual/visual-/",
+      "source_path": "docs/visual/visual-index.md",
+      "excerpt": "図表ガイド このページでは、本文で詰まりやすい概念を静的 SVG 図で補強する。Jekyll の標準 Markdown だけで表示できるように、Mermaid 依存にはしていない。 図表一覧 | 図 | 対象章 | 使い方 | |---|---|---| | 証明を書くときの基本フロー | 第3章 | 証明問題で最初に見る | | 代表的な成長率 | 第4章 | O記法の大小比較で見る | | 再帰呼び出しとスタック | 第5章 | 再"
+    }
+  ]
+}

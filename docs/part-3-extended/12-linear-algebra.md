@@ -1,12 +1,12 @@
 # 第12章 線形代数の最小限
 
-!!! info "章間ナビゲーション"
-    - 前: [第11章 数論・代数の基礎](11-number-theory-algebra.md)
-    - 次: [第13章 並行性と形式モデルの入口](13-concurrency-models.md)
-    - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
-    - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
-    - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
-
+> **章間ナビゲーション**
+> - 前: [第11章 数論・代数の基礎](11-number-theory-algebra.md)
+> - 次: [第13章 並行性と形式モデルの入口](13-concurrency-models.md)
+> - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
+> - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
+> - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
+>
 
 ## この章で使う記号
 

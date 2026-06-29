@@ -11,7 +11,7 @@
 
 - [ ] READMEのバージョンとスコープを更新した。
 - [ ] CHANGELOGにAdded / Changed / Fixedを記載した。
-- [ ] 新規ページをmkdocs.ymlへ追加した。
+- [ ] 新規ページを docs/_data/navigation.yml へ追加した。
 - [ ] index.mdに主要導線を追加した。
 - [ ] learning-path.mdに必要な導線を追加した。
 - [ ] 新規演習には難易度ラベルを付けた。
@@ -25,14 +25,14 @@ python scripts/check_links.py
 python scripts/check_exercise_labels.py
 python examples/python/tests.py
 python -m pytest
-mkdocs build --strict
+bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
 ```
 
 - [ ] リンクチェック通過。
 - [ ] 演習ラベルチェック通過。
 - [ ] Python examples smoke test 通過。
 - [ ] pytest 通過。
-- [ ] mkdocs build --strict 通過。
+- [ ] bundle exec jekyll build --source docs --config docs/_config.yml --destination _site 通過。
 
 ## ライセンス・引用
 

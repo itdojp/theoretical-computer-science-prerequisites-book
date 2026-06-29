@@ -1,12 +1,12 @@
 # 第5章 擬似コードと再帰
 
-!!! info "章間ナビゲーション"
-    - 前: [第4章 漸近記法](04-asymptotic-notation.md)
-    - 次: [第6章 グラフと木](../part-2-standard/06-graphs-trees.md)
-    - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
-    - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
-    - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
-
+> **章間ナビゲーション**
+> - 前: [第4章 漸近記法](04-asymptotic-notation.md)
+> - 次: [第6章 グラフと木](../part-2-standard/06-graphs-trees.md)
+> - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
+> - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
+> - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
+>
 
 ## この章で使う記号
 

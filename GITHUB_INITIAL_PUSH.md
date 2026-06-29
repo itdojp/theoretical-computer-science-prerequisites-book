@@ -44,7 +44,7 @@ Settings
   → Source: GitHub Actions
 ```
 
-`.github/workflows/pages.yml` が `main` への push 時に MkDocs を build し、GitHub Pages へ deploy する。
+`.github/workflows/pages.yml` が `main` への push 時に Jekyll を build し、GitHub Pages へ deploy する。
 
 ## 3. 動作確認
 

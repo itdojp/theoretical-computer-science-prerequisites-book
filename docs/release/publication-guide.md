@@ -8,10 +8,10 @@ python scripts/check_exercise_labels.py
 python scripts/check_exercise_solution_mapping.py
 python examples/python/tests.py
 python -m pytest
-mkdocs build --strict
+bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
 ```
 
-`mkdocs build --strict` は `pip install -r requirements.txt` 後に実行します。
+`bundle exec jekyll build --source docs --config docs/_config.yml --destination _site` は `bundle install` 後に実行します。
 
 ## 2. 公開メタデータを確定する
 
@@ -22,7 +22,7 @@ mkdocs build --strict
 - 問い合わせ先をIssueに限定するか、別連絡先を置くか。
 - 著作者表記を contributors のままにするか、組織名義にするか。
 - `CITATION.cff` の著作者表記。
-- `mkdocs.yml` に `site_url` を追加するか。
+- `docs/_config.yml` の `url` / `baseurl` が公開URLと一致しているか。
 
 ## 3. タグを作成する
 

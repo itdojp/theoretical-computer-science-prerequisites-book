@@ -1,12 +1,12 @@
 # 第2章 関数と関係
 
-!!! info "章間ナビゲーション"
-    - 前: [第1章 集合と論理](01-sets-logic.md)
-    - 次: [第3章 証明技法](03-proofs.md)
-    - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
-    - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
-    - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
-
+> **章間ナビゲーション**
+> - 前: [第1章 集合と論理](01-sets-logic.md)
+> - 次: [第3章 証明技法](03-proofs.md)
+> - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
+> - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
+> - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
+>
 
 ## この章で使う記号
 
