@@ -41,19 +41,6 @@ exclude:
   - operations/
   - forms/
   - quality/
-  - node_modules/
-  - package.json
-  - package-lock.json
-  - Gemfile
-  - Gemfile.lock
-  - scripts/
-  - tests/
-  - README.md
-  - book-config.json
-  - examples/
-  - integration/
-  - vendor/
-  - .bundle/
 
 # Use the same custom book layout family as the other ITDO book sites.
 defaults:

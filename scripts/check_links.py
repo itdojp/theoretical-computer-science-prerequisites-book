@@ -117,10 +117,17 @@ def check_jekyll_config() -> list[str]:
     cfg = DOCS / "_config.yml"
     if not cfg.exists():
         return ["docs/_config.yml is missing"]
-    text = cfg.read_text(encoding="utf-8")
+    try:
+        import yaml  # type: ignore
+    except Exception as exc:  # pragma: no cover
+        return [f"PyYAML unavailable: {exc}"]
+    data = yaml.safe_load(cfg.read_text(encoding="utf-8")) or {}
+    excludes = data.get("exclude", []) if isinstance(data, dict) else []
+    normalized = {str(item).strip("'").strip('"') for item in excludes}
     for path in EXCLUDED_SITE_DIRS:
-        if f"  - {path}/" not in text:
-            errors.append(f"docs/_config.yml must exclude repository-only path: {path}/")
+        expected = f"{path}/"
+        if expected not in normalized:
+            errors.append(f"docs/_config.yml must exclude repository-only path: {expected}")
     return errors
 
 
