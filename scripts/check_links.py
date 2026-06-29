@@ -13,6 +13,7 @@ LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 CODE_FENCE_RE = re.compile(r"^\s*```")
 
 IGNORE_SCHEMES = {"http", "https", "mailto", "tel", "sandbox"}
+EXCLUDED_SITE_DIRS = {"audit", "release", "operations", "forms", "quality"}
 
 
 def iter_markdown_files() -> list[Path]:
@@ -32,7 +33,6 @@ def strip_code_fences(text: str) -> str:
 
 
 def normalize_link(raw: str) -> str | None:
-    # Remove optional title: [x](path "title")
     raw = raw.strip()
     if not raw or raw.startswith("#"):
         return None
@@ -67,43 +67,70 @@ def check_markdown_links() -> list[str]:
     return errors
 
 
-def check_mkdocs_nav() -> list[str]:
+def check_jekyll_navigation() -> list[str]:
     errors: list[str] = []
-    yml = ROOT / "mkdocs.yml"
-    if not yml.exists():
-        return ["mkdocs.yml is missing"]
+    nav_file = DOCS / "_data" / "navigation.yml"
+    if not nav_file.exists():
+        return ["docs/_data/navigation.yml is missing"]
     try:
         import yaml  # type: ignore
     except Exception as exc:  # pragma: no cover
         return [f"PyYAML unavailable: {exc}"]
-    data = yaml.safe_load(yml.read_text(encoding="utf-8"))
-    nav = data.get("nav", []) if isinstance(data, dict) else []
+
+    data = yaml.safe_load(nav_file.read_text(encoding="utf-8")) or {}
 
     def walk(node):
-        if isinstance(node, str):
-            yield node
+        if isinstance(node, dict):
+            if "path" in node:
+                yield node["path"]
+            for value in node.values():
+                yield from walk(value)
         elif isinstance(node, list):
             for item in node:
                 yield from walk(item)
-        elif isinstance(node, dict):
-            for value in node.values():
-                yield from walk(value)
 
-    for rel in walk(nav):
-        if isinstance(rel, str) and rel.endswith(".md"):
-            target = DOCS / rel
-            if not target.exists():
-                errors.append(f"mkdocs nav target missing: {rel}")
+    seen: set[str] = set()
+    for raw in walk(data):
+        if not isinstance(raw, str) or not raw.startswith("/"):
+            errors.append(f"Jekyll navigation path must be absolute: {raw!r}")
+            continue
+        if raw in seen:
+            errors.append(f"duplicate Jekyll navigation path: {raw}")
+        seen.add(raw)
+        rel = raw.strip("/")
+        candidates = []
+        if not rel:
+            candidates.append(DOCS / "index.md")
+        else:
+            candidates.append(DOCS / f"{rel}.md")
+            candidates.append(DOCS / rel / "index.md")
+        if not any(p.exists() for p in candidates):
+            errors.append(f"Jekyll navigation target missing: {raw}")
+        first_part = rel.split("/", 1)[0] if rel else ""
+        if first_part in EXCLUDED_SITE_DIRS:
+            errors.append(f"repository-only directory must not be in published navigation: {raw}")
+    return errors
+
+
+def check_jekyll_config() -> list[str]:
+    errors: list[str] = []
+    cfg = DOCS / "_config.yml"
+    if not cfg.exists():
+        return ["docs/_config.yml is missing"]
+    text = cfg.read_text(encoding="utf-8")
+    for path in EXCLUDED_SITE_DIRS:
+        if f"  - {path}/" not in text:
+            errors.append(f"docs/_config.yml must exclude repository-only path: {path}/")
     return errors
 
 
 def main() -> int:
-    errors = check_markdown_links() + check_mkdocs_nav()
+    errors = check_markdown_links() + check_jekyll_navigation() + check_jekyll_config()
     if errors:
         for error in errors:
             print(error, file=sys.stderr)
         return 1
-    print("all markdown/mkdocs links OK")
+    print("all markdown/Jekyll links OK")
     return 0
 
 

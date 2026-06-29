@@ -2,7 +2,7 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-ready-green)](https://itdojp.github.io/theoretical-computer-science-prerequisites-book/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://github.com/itdojp/it-engineer-knowledge-architecture/blob/main/LICENSE.md)
-[![MkDocs Material](https://img.shields.io/badge/MkDocs-Material-blue)](https://squidfunk.github.io/mkdocs-material/)
+[![Jekyll](https://img.shields.io/badge/Jekyll-book%20site-blue)](https://jekyllrb.com/)
 
 集合・論理から確率・数論・形式モデルまで。
 
@@ -127,7 +127,8 @@ Extended 第10〜13章から必要箇所
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-mkdocs serve
+bundle install
+bundle exec jekyll serve --source docs --config docs/_config.yml --destination _site
 ```
 
 品質チェック:
@@ -138,18 +139,18 @@ python scripts/check_exercise_labels.py
 python scripts/check_exercise_solution_mapping.py
 python examples/python/tests.py
 python -m pytest
-mkdocs build --strict
+bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
 ```
 
 ## GitHub Pages
 
-このリポジトリは MkDocs Material で構成しています。`.github/workflows/pages.yml` により、`main` ブランチへの push で GitHub Pages へデプロイします。
+このリポジトリは、他の ITDO 書籍と同じ Jekyll ベースの書籍レイアウトで構成しています。`.github/workflows/pages.yml` により、`main` ブランチへの push で GitHub Pages へデプロイします。
 
 GitHub Pages は **GitHub Actions** からデプロイします。Pages workflow は初回実行時に Pages 設定の有効化も試みます。
 
 ## このリポジトリについて
 
-- `docs/`: 本文、演習、図表、評価資料、およびリポジトリ保守資料
+- `docs/`: 本文、演習、図表、評価資料、および GitHub で参照するリポジトリ保守資料
 - `examples/python/`: 小規模な Python 実装例
 - `scripts/`: 品質チェック・リリース補助スクリプト
 - `tests/`: pytest 用テスト

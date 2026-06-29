@@ -1,12 +1,12 @@
 # 第1章 集合と論理
 
-!!! info "章間ナビゲーション"
-    - 前: なし
-    - 次: [第2章 関数と関係](02-functions-relations.md)
-    - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
-    - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
-    - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
-
+> **章間ナビゲーション**
+> - 前: なし
+> - 次: [第2章 関数と関係](02-functions-relations.md)
+> - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
+> - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
+> - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
+>
 
 ## この章で使う記号
 

@@ -1,0 +1,64 @@
+title: "理論計算機科学を読むための数学・証明・アルゴリズム基礎"
+description: "集合・論理から確率・数論・形式モデルまで、理論計算機科学教科書へ進むための前提を補強するブリッジ教材"
+author: "株式会社アイティードゥ"
+version: "1.0.0"
+lang: "ja"
+
+url: "https://itdojp.github.io"
+baseurl: "/theoretical-computer-science-prerequisites-book"
+repository: "itdojp/theoretical-computer-science-prerequisites-book"
+repository_branch: "main"
+repository_path_prefix: "docs"
+show_github_links: true
+show_edit_link: true
+feedback_url: "https://github.com/itdojp/theoretical-computer-science-prerequisites-book/issues"
+license_text: "Content licensed under CC BY-NC-SA 4.0 (commercial use requires a separate agreement)."
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+
+relative_links:
+  enabled: true
+  collections: false
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: false
+
+exclude:
+  - audit/
+  - release/
+  - operations/
+  - forms/
+  - quality/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - scripts/
+  - tests/
+  - README.md
+  - book-config.json
+  - examples/
+  - integration/
+  - vendor/
+  - .bundle/
+
+# Use the same custom book layout family as the other ITDO book sites.
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "book"

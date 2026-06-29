@@ -2,7 +2,7 @@
 
 ## 目的
 
-教材を継続更新する前提で、最低限の品質ゲートを定義する。v1.0 では、リンク、演習ラベル、演習と解答の番号対応、Python examples、MkDocs build を確認対象にする。
+教材を継続更新する前提で、最低限の品質ゲートを定義する。現行版では、リンク、演習ラベル、演習と解答の番号対応、Python examples、Jekyll build を確認対象にする。
 
 ## ローカル確認
 
@@ -14,11 +14,11 @@ python examples/python/tests.py
 python -m pytest
 ```
 
-MkDocsをインストールできる環境では、次も実行する。
+Bundler と Jekyll を利用できる環境では、次も実行する。
 
 ```bash
 pip install -r requirements.txt
-mkdocs build --strict
+bundle exec jekyll build --source docs --config docs/_config.yml --destination _site
 ```
 
 ## GitHub Actions
@@ -32,7 +32,7 @@ mkdocs build --strict
 - 演習番号と解答番号の対応チェック。
 - pytest。
 - 既存の smoke test。
-- MkDocs strict build。
+- Jekyll build。
 
 ## 失敗時の処理
 
@@ -43,7 +43,7 @@ mkdocs build --strict
 | `check_exercise_solution_mapping.py` | 問題追加後に解答を追加していない、番号ずれ | 問題IDと解答IDを揃える |
 | `pytest` | exampleの仕様変更、境界条件未対応 | テストまたは実装を更新 |
 | `examples/python/tests.py` | smoke testの退行 | 既存API互換性を確認 |
-| `mkdocs build --strict` | nav参照先不備、Markdown拡張の問題 | `mkdocs.yml` と対象Markdownを修正 |
+| `bundle exec jekyll build --source docs --config docs/_config.yml --destination _site` | navigation参照先不備、Markdown変換の問題 | `docs/_config.yml`、`docs/_data/navigation.yml`、対象Markdownを修正 |
 
 ## 品質ゲート
 

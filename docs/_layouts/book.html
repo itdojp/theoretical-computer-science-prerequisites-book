@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'ja' }}" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <meta name="author" content="{{ site.author | escape }}">
+    
+    <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/syntax-highlighting.css' | relative_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ '/assets/images/itdo_logo_48x48_blue.png' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="48x48" href="{{ '/assets/images/itdo_logo_48x48_blue.png' | relative_url }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+    <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description | escape }}">
+    
+    <!-- Theme detection before paint (used by shared/assets/js/theme.js) -->
+    <script>
+        (function() {
+            try {
+                const NEW_KEY = 'book-theme';
+                const OLD_KEY = 'theme';
+                if (!localStorage.getItem(NEW_KEY)) {
+                    const oldTheme = localStorage.getItem(OLD_KEY);
+                    if (oldTheme) {
+                        localStorage.setItem(NEW_KEY, oldTheme);
+                        localStorage.removeItem(OLD_KEY);
+                    }
+                }
+                let t = null;
+                try {
+                    t = localStorage.getItem(NEW_KEY);
+                    if (!t) {
+                        const legacy = localStorage.getItem('theme');
+                        if (legacy) {
+                            t = legacy;
+                            localStorage.setItem(k, t);
+                        }
+                    }
+                } catch (_) {}
+                if (!t) {
+                    const mq = typeof matchMedia === 'function' ? matchMedia('(prefers-color-scheme: dark)') : null;
+                    t = mq && mq.matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (_) {}
+        })();
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+    {% assign repo_url = site.github.repository_url | default: site.repository_url | default: site.repository.github | default: site.repository %}
+    {% if repo_url and repo_url != '' %}
+        {% unless repo_url contains 'http' %}
+            {% assign repo_url = 'https://github.com/' | append: repo_url %}
+        {% endunless %}
+    {% endif %}
+    {% assign repo_branch = site.repository_branch | default: 'main' %}
+
+    <!-- CSS-only sidebar toggle (hidden checkbox for state management) -->
+    <input type="checkbox" id="sidebar-toggle-checkbox" class="sidebar-toggle-checkbox" aria-hidden="true" tabindex="-1">
+    
+    <div class="book-layout">
+        <!-- Header -->
+        <header class="book-header">
+            <div class="header-left">
+                <label for="sidebar-toggle-checkbox" class="sidebar-toggle" aria-label="Toggle sidebar" role="button" tabindex="0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <a href="{{ '/' | relative_url }}" class="header-title">
+                    <h1>{{ site.title | escape }}</h1>
+                </a>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-container">
+                    <input type="search" 
+                           placeholder="Search..." 
+                           class="search-input"
+                           id="search-input"
+                           autocomplete="off">
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                {% if repo_url and site.show_github_links != false %}
+                <a href="{{ repo_url }}" class="github-link" target="_blank" rel="noopener" aria-label="View on GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                {% endif %}
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="book-sidebar" id="sidebar">
+            <nav class="sidebar-nav" role="navigation" aria-label="Main navigation">
+                {% include sidebar-nav.html %}
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="book-main" id="main">
+            <div class="book-content">
+
+                <!-- Page Content -->
+                <article class="page-content">
+                    {% assign has_sections = false %}
+                    {% if page.sections != nil and page.sections != empty %}
+                        {% assign has_sections = true %}
+                    {% endif %}
+                    {% assign has_chapter_profile = false %}
+                    {% if page.chapter %}
+                        {% if page.estimated_time or page.difficulty or has_sections %}
+                            {% assign has_chapter_profile = true %}
+                        {% endif %}
+                    {% endif %}
+
+                    {% if has_chapter_profile %}
+                        {% capture chapter_profile_html %}
+                        <section class="chapter-profile" aria-labelledby="chapter-profile-heading">
+                            <div class="chapter-profile-head">
+                                <p class="chapter-profile-eyebrow" id="chapter-profile-heading">章プロフィール</p>
+                                {% if page.subtitle %}
+                                <p class="chapter-profile-subtitle">{{ page.subtitle | escape }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="chapter-profile-grid">
+                                {% if page.estimated_time %}
+                                <div class="chapter-profile-item">
+                                    <span class="chapter-profile-label">読了目安</span>
+                                    <span class="chapter-profile-value">{{ page.estimated_time | escape }}</span>
+                                </div>
+                                {% endif %}
+                                {% if page.difficulty %}
+                                <div class="chapter-profile-item">
+                                    <span class="chapter-profile-label">難易度</span>
+                                    <span class="chapter-profile-value">{{ page.difficulty | escape }}</span>
+                                </div>
+                                {% endif %}
+                                {% if has_sections %}
+                                <div class="chapter-profile-item">
+                                    <span class="chapter-profile-label">章構成</span>
+                                    <span class="chapter-profile-value">{{ page.sections | size }}節</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% if has_sections %}
+                            <div class="chapter-profile-topics">
+                                <p class="chapter-profile-topics-label">主要トピック</p>
+                                <ul class="chapter-profile-sections">
+                                    {% for section in page.sections %}
+                                    <li>{{ section | escape }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            {% if page.chapter %}
+                            <div class="chapter-profile-links">
+                                <p class="chapter-profile-topics-label">戻り先</p>
+                                <div class="chapter-profile-link-list">
+                                    <a class="chapter-profile-link" href="{{ '/appendices/a/' | relative_url }}">付録A: 記法</a>
+                                    <a class="chapter-profile-link" href="{{ '/appendices/c/' | relative_url }}#ex-sol-ch{{ page.chapter }}">付録C: 解答</a>
+                                    <a class="chapter-profile-link" href="{{ '/appendices/d/' | relative_url }}">付録D: 用語</a>
+                                    <a class="chapter-profile-link" href="{{ '/appendices/f/' | relative_url }}#learning-check-ch{{ page.chapter }}">付録F: 進捗</a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </section>
+                        {% endcapture %}
+                        {% assign h1_close = '</h1>' %}
+                        {% assign chapter_profile_replacement = h1_close | append: chapter_profile_html %}
+                        {% assign content_with_profile = content | replace_first: h1_close, chapter_profile_replacement %}
+                        {{ content_with_profile }}
+                    {% else %}
+                        {{ content }}
+                    {% endif %}
+                </article>
+
+                <!-- Navigation -->
+                {% if page.url != '/' %}
+                <nav class="page-navigation" aria-label="Page navigation">
+                    {% include page-navigation.html %}
+                </nav>
+                {% endif %}
+
+                <!-- Edit on GitHub -->
+                {% if repo_url and page.path and site.show_edit_link != false %}
+                {% assign repo_path_prefix = site.repository_path_prefix | default: '' %}
+                {% assign edit_path = page.path %}
+                {% if repo_path_prefix != '' %}
+                    {% assign prefix_with_slash = repo_path_prefix | append: '/' %}
+                    {% assign prefix_size = prefix_with_slash | size %}
+                    {% assign head = edit_path | slice: 0, prefix_size %}
+                    {% unless head == prefix_with_slash %}
+                        {% assign edit_path = prefix_with_slash | append: edit_path %}
+                    {% endunless %}
+                {% endif %}
+                <div class="edit-page">
+                    <a href="{{ repo_url }}/edit/{{ repo_branch }}/{{ edit_path }}" 
+                       target="_blank" 
+                       rel="noopener"
+                       class="edit-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"></path>
+                        </svg>
+                        Edit this page on GitHub
+                    </a>
+                </div>
+                {% endif %}
+
+                <!-- Footer -->
+                <footer class="book-footer" role="contentinfo">
+                    <div class="book-footer-inner">
+                        <div class="book-footer-license">
+                            {{ site.license_text | default: "Content licensed under CC BY-NC-SA 4.0 (commercial use requires a separate agreement)." }}
+                        </div>
+                        <div class="book-footer-links">
+                            {% if repo_url %}
+                                <a href="{{ repo_url }}" target="_blank" rel="noopener">GitHub</a>
+                            {% endif %}
+                            {% if site.contact.email %}
+                                <a href="mailto:{{ site.contact.email | escape }}">Contact</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay for mobile sidebar (CSS-only close trigger) -->
+    <label for="sidebar-toggle-checkbox" class="book-sidebar-overlay" id="sidebar-overlay" aria-label="Close sidebar"></label>
+
+    <!-- MathJax (TeX rendering) -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                packages: { '[+]': ['ams'] }
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <!-- Lightweight code copy - no MutationObserver to prevent freeze -->
+    <script async src="{{ '/assets/js/code-copy-lightweight.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/search.js' | relative_url }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var cb = document.getElementById('sidebar-toggle-checkbox');
+            var toggle = document.querySelector('.sidebar-toggle');
+            var sidebar = document.getElementById('sidebar');
+            var skip = document.querySelector('.skip-link');
+            var main = document.getElementById('main');
+            var returnFocus = null;
+
+            if (cb) cb.checked = false;
+
+            // Make the skip link move focus into the main region for keyboard users.
+            if (skip && main) {
+                skip.addEventListener('click', function() {
+                    try {
+                        main.setAttribute('tabindex', '-1');
+                        main.focus({ preventScroll: true });
+                    } catch (_) {
+                        try { main.focus(); } catch (_) {}
+                    }
+
+                    // Remove the temporary tabindex after focus moves away from the main region.
+                    var removeTabindex = function() {
+                        if (main.getAttribute('tabindex') === '-1') {
+                            main.removeAttribute('tabindex');
+                        }
+                        main.removeEventListener('blur', removeTabindex);
+                    };
+                    main.addEventListener('blur', removeTabindex);
+                });
+            }
+
+            if (!cb || !toggle) return;
+
+            var isMobile = function() {
+                try {
+                    return typeof matchMedia === 'function' && matchMedia('(max-width: 1024px)').matches;
+                } catch (_) {
+                    return false;
+                }
+            };
+
+            var sync = function() {
+                toggle.setAttribute('aria-expanded', cb.checked ? 'true' : 'false');
+            };
+
+            var getSidebarFocusable = function() {
+                if (!sidebar) return [];
+                return sidebar.querySelectorAll(
+                    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex=\"-1\"])'
+                );
+            };
+
+            var focusPreferredInSidebar = function() {
+                // Prefer focusing the current page entry so the user immediately sees where they are in the TOC.
+                if (sidebar) {
+                    var active = sidebar.querySelector('a.toc-link.active');
+                    if (active && typeof active.focus === 'function') {
+                        try {
+                            active.focus({ preventScroll: true });
+                        } catch (_) {
+                            try { active.focus(); } catch (_) {}
+                        }
+                        return;
+                    }
+                }
+
+                var focusable = getSidebarFocusable();
+                if (focusable && focusable.length && typeof focusable[0].focus === 'function') {
+                    try {
+                        focusable[0].focus({ preventScroll: true });
+                    } catch (_) {
+                        try { focusable[0].focus(); } catch (_) {}
+                    }
+                }
+            };
+
+            // Keep focus inside the sidebar while it is open on mobile (basic focus trap).
+            var trapTabKey = function(e) {
+                if (e.key !== 'Tab') return;
+                if (!cb.checked) return;
+                if (!isMobile()) return;
+                if (!sidebar) return;
+
+                var focusable = getSidebarFocusable();
+                if (!focusable || !focusable.length) return;
+
+                var first = focusable[0];
+                var last = focusable[focusable.length - 1];
+                var active = document.activeElement;
+
+                if (e.shiftKey) {
+                    if (active === first || !sidebar.contains(active)) {
+                        e.preventDefault();
+                        last.focus();
+                    }
+                } else {
+                    if (active === last || !sidebar.contains(active)) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            };
+
+            sync();
+            cb.addEventListener('change', function() {
+                sync();
+                if (cb.checked) {
+                    returnFocus = document.activeElement;
+                    if (!returnFocus || typeof returnFocus.focus !== 'function') {
+                        returnFocus = toggle;
+                    }
+                    if (isMobile()) setTimeout(focusPreferredInSidebar, 0);
+                } else {
+                    var target = returnFocus;
+                    if (!target || typeof target.focus !== 'function') {
+                        target = toggle;
+                    }
+                    if (sidebar && target && sidebar.contains(target)) {
+                        target = toggle;
+                    }
+                    try { target.focus(); } catch (_) {}
+                    returnFocus = null;
+                }
+            });
+
+            toggle.addEventListener('keydown', function(e) {
+                if (e.key === ' ' || e.key === 'Enter') {
+                    e.preventDefault();
+                    cb.checked = !cb.checked;
+                    cb.dispatchEvent(new Event('change', { bubbles: true }));
+                } else if (e.key === 'Escape') {
+                    if (cb.checked) {
+                        cb.checked = false;
+                        cb.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && cb.checked) {
+                    cb.checked = false;
+                    cb.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+
+            document.addEventListener('keydown', trapTabKey);
+        });
+    </script>
+
+            <script>
+        // Auto-scroll active TOC into view when opening the drawer.
+        (function() {
+            function initTocAutoScroll() {
+                var cb = document.getElementById('sidebar-toggle-checkbox');
+                if (!cb) return;
+
+                function normalizePath(p) {
+                    var path = String(p || '').replace(/index\.html$/, '');
+                    // Remove trailing slashes for non-root paths so `/foo` and `/foo/` compare equal.
+                    if (path.length > 1) {
+                        path = path.replace(/\/+$/, '');
+                    }
+                    // Ensure we always return at least '/'.
+                    return path || '/';
+                }
+
+                function isMobileDrawer() {
+                    try {
+                        if (typeof window.matchMedia === 'function') {
+                            return window.matchMedia('(max-width: 1024px)').matches;
+                        }
+                    } catch (_) {
+                        // Ignore matchMedia failures and fall back to window.innerWidth.
+                    }
+                    return typeof window.innerWidth === 'number' ? window.innerWidth <= 1024 : true;
+                }
+
+                function findActiveTocLink() {
+                    var current = normalizePath(window.location.pathname);
+                    var actives = document.querySelectorAll('a.toc-link.active');
+                    if (!actives || actives.length === 0) return null;
+
+                    for (var i = 0; i < actives.length; i++) {
+                        var a = actives[i];
+                        if (!a || !a.href) continue;
+                        try {
+                            var pathname = normalizePath(new URL(a.href).pathname);
+                            if (pathname === current) return a;
+                        } catch (_) {
+                            // Intentionally ignore malformed URLs; fall back to the first active TOC entry.
+                        }
+                    }
+                    return actives[0];
+                }
+
+                function ensureActiveTocVisible() {
+                    // If the drawer is closed while we are scheduled, do nothing.
+                    if (!cb.checked) return;
+                    if (!isMobileDrawer()) return;
+
+                    var active = findActiveTocLink();
+                    if (!active) return;
+
+                    var sidebar = active.closest('.book-sidebar') || document.getElementById('sidebar');
+                    if (!sidebar) return;
+
+                    try {
+                        var linkRect = active.getBoundingClientRect();
+                        var sidebarRect = sidebar.getBoundingClientRect();
+
+                        // Derive scroll margin from sidebar padding so behavior follows CSS.
+                        // Fallback to 8px if padding is not available or not parsable.
+                        var marginTop = 8;
+                        var marginBottom = 8;
+                        try {
+                            if (window.getComputedStyle) {
+                                var cs = window.getComputedStyle(sidebar);
+                                if (cs) {
+                                    var pt = parseFloat(cs.paddingTop);
+                                    var pb = parseFloat(cs.paddingBottom);
+                                    if (!isNaN(pt)) marginTop = pt;
+                                    if (!isNaN(pb)) marginBottom = pb;
+                                }
+                            }
+                        } catch (_) {
+                            // Ignore style parsing issues; keep fallback margins.
+                        }
+
+                        var top = sidebarRect.top + marginTop;
+                        var bottom = sidebarRect.bottom - marginBottom;
+                        // Scroll when any part of the active link is outside the visible bounds.
+                        var outOfView = linkRect.top < top || linkRect.bottom > bottom;
+
+                        if (outOfView && typeof active.scrollIntoView === 'function') {
+                            try {
+                                active.scrollIntoView({ block: 'center', behavior: 'auto' });
+                            } catch (e) {
+                                // Fallback for browsers that do not support the options-object signature.
+                                active.scrollIntoView();
+                            }
+                        }
+                    } catch (_) {
+                        // Best-effort UX: ignore measurement errors.
+                    }
+                }
+
+                function scheduleEnsure() {
+                    // Next tick (no transition) and after a short delay (CSS transitions/focus side-effects).
+                    setTimeout(ensureActiveTocVisible, 0);
+                    setTimeout(ensureActiveTocVisible, 350);
+                }
+
+                cb.addEventListener('change', function() {
+                    if (!cb.checked) return;
+                    scheduleEnsure();
+                });
+
+                // If the drawer is already open (bfcache/restore), ensure once.
+                if (cb.checked) {
+                    scheduleEnsure();
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initTocAutoScroll);
+            } else {
+                initTocAutoScroll();
+            }
+        })();
+    </script>
+
+
+
+</body>
+</html>

@@ -1,12 +1,12 @@
 # 第11章 数論・代数の基礎
 
-!!! info "章間ナビゲーション"
-    - 前: [第10章 確率の基礎](10-probability.md)
-    - 次: [第12章 線形代数の最小限](12-linear-algebra.md)
-    - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
-    - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
-    - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
-
+> **章間ナビゲーション**
+> - 前: [第10章 確率の基礎](10-probability.md)
+> - 次: [第12章 線形代数の最小限](12-linear-algebra.md)
+> - 章別マップ: [章間リンクマップ](../navigation/chapter-link-map.md)
+> - 用語確認: [用語索引](../reference/glossary.md) / [記号索引](../reference/symbol-index.md)
+> - 到達判定: [章末確認チェック](../assessment/chapter-exit-checks.md)
+>
 
 ## この章で使う記号
 

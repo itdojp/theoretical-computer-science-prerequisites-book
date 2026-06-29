@@ -14,7 +14,7 @@
 ## 対象に含まれないもの
 
 - 本書からリンクしている外部教材、外部講義、外部書籍、外部Webページ
-- GitHub、MkDocs、MkDocs Material、Python、pytest などの外部ソフトウェア本体
+- GitHub、Jekyll、Ruby、Bundler、Python、pytest などの外部ソフトウェア本体
 - 引用・参照対象となる第三者の商標、サービス名、教材名
 
 ## 商用利用

@@ -15,25 +15,41 @@
       {
         "id": "core",
         "title": "Part I: Core",
-        "chapters": ["01-sets-logic", "02-functions-relations", "03-proofs", "04-asymptotic-notation", "05-pseudocode-recursion"]
+        "chapters": [
+          "01-sets-logic",
+          "02-functions-relations",
+          "03-proofs",
+          "04-asymptotic-notation",
+          "05-pseudocode-recursion"
+        ]
       },
       {
         "id": "standard",
         "title": "Part II: Standard",
-        "chapters": ["06-graphs-trees", "07-counting", "08-data-structures", "09-formal-language-primer"]
+        "chapters": [
+          "06-graphs-trees",
+          "07-counting",
+          "08-data-structures",
+          "09-formal-language-primer"
+        ]
       },
       {
         "id": "extended",
         "title": "Part III: Extended",
-        "chapters": ["10-probability", "11-number-theory-algebra", "12-linear-algebra", "13-concurrency-models"]
+        "chapters": [
+          "10-probability",
+          "11-number-theory-algebra",
+          "12-linear-algebra",
+          "13-concurrency-models"
+        ]
       }
     ]
   },
   "build": {
-    "framework": "mkdocs-material",
+    "framework": "jekyll",
     "docsDirectory": "docs",
-    "outputDirectory": "site",
-    "strict": true
+    "outputDirectory": "_site",
+    "config": "docs/_config.yml"
   },
   "ux": {
     "profile": "C",

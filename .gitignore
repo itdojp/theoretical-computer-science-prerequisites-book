@@ -7,8 +7,14 @@ __pycache__/
 venv/
 .env
 
-# MkDocs
+# Static site builds
 site/
+_site/
+.jekyll-cache/
+docs/.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/bundle/
 
 # OS / editor
 .DS_Store
