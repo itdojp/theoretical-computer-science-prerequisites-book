@@ -2,12 +2,12 @@
 
 ## 1. 自動検査
 
-- [ ] `python scripts/check_links.py` が通過する。
-- [ ] `python scripts/check_exercise_labels.py` が通過する。
-- [ ] `python scripts/check_exercise_solution_mapping.py` が通過する。
-- [ ] `python examples/python/tests.py` が通過する。
-- [ ] `python -m pytest` が通過する。
-- [ ] 実環境で `mkdocs build --strict` が通過する。
+- [x] `python scripts/check_links.py` が通過する。
+- [x] `python scripts/check_exercise_labels.py` が通過する。
+- [x] `python scripts/check_exercise_solution_mapping.py` が通過する。
+- [x] `python examples/python/tests.py` が通過する。
+- [x] `python -m pytest` が通過する。
+- [x] 実環境で `mkdocs build --strict` が通過する。
 
 ## 2. 内容監査
 
@@ -40,9 +40,9 @@
 ## 5. 公開前メタデータ
 
 - [ ] README の著作者名が確定している。
-- [ ] README の公開URLが確定している。
+- [x] README の公開URLが確定している。
 - [ ] `site_author` が確定している。
-- [ ] `site_url` を使う場合は `mkdocs.yml` に追加している。
+- [x] `site_url` を使う場合は `mkdocs.yml` に追加している。
 - [ ] 連絡先またはIssue受付方針が明記されている。
 
 ## 6. リリース作業
