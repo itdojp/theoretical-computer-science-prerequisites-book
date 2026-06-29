@@ -1,0 +1,55 @@
+{
+  "title": "理論計算機科学を読むための数学・証明・アルゴリズム基礎",
+  "description": "集合・論理から確率・数論・形式モデルまで、理論計算機科学教科書へ進むための前提を補強するブリッジ教材",
+  "author": "ITDO Inc.（株式会社アイティードゥ）",
+  "version": "1.0.0",
+  "language": "ja",
+  "license": "CC-BY-NC-SA-4.0",
+  "repository": {
+    "url": "https://github.com/itdojp/theoretical-computer-science-prerequisites-book.git",
+    "branch": "main"
+  },
+  "homepage": "https://itdojp.github.io/theoretical-computer-science-prerequisites-book/",
+  "structure": {
+    "parts": [
+      {
+        "id": "core",
+        "title": "Part I: Core",
+        "chapters": ["01-sets-logic", "02-functions-relations", "03-proofs", "04-asymptotic-notation", "05-pseudocode-recursion"]
+      },
+      {
+        "id": "standard",
+        "title": "Part II: Standard",
+        "chapters": ["06-graphs-trees", "07-counting", "08-data-structures", "09-formal-language-primer"]
+      },
+      {
+        "id": "extended",
+        "title": "Part III: Extended",
+        "chapters": ["10-probability", "11-number-theory-algebra", "12-linear-algebra", "13-concurrency-models"]
+      }
+    ]
+  },
+  "build": {
+    "framework": "mkdocs-material",
+    "docsDirectory": "docs",
+    "outputDirectory": "site",
+    "strict": true
+  },
+  "ux": {
+    "profile": "C",
+    "modules": {
+      "quickStart": true,
+      "readingGuide": true,
+      "checklistPack": true,
+      "troubleshootingFlow": false,
+      "conceptMap": true,
+      "figureIndex": true,
+      "legalNotice": true,
+      "glossary": true
+    }
+  },
+  "shared": {
+    "version": "3.2.2",
+    "lastSync": "2026-06-29T00:00:00+09:00"
+  }
+}

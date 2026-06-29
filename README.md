@@ -10,7 +10,7 @@
 
 ## 読者向け導線
 
-- 公開サイト（予定）: https://itdojp.github.io/theoretical-computer-science-prerequisites-book/
+- 公開サイト: https://itdojp.github.io/theoretical-computer-science-prerequisites-book/
 - 本体教科書: https://itdojp.github.io/theoretical-computer-science-textbook/
 - リポジトリ: https://github.com/itdojp/theoretical-computer-science-prerequisites-book
 - フィードバック: GitHub Issues
@@ -143,9 +143,9 @@ mkdocs build --strict
 
 ## GitHub Pages
 
-このリポジトリは MkDocs Material で構成しています。`.github/workflows/pages.yml` により、`main` ブランチへの push で GitHub Pages へデプロイする想定です。
+このリポジトリは MkDocs Material で構成しています。`.github/workflows/pages.yml` により、`main` ブランチへの push で GitHub Pages へデプロイします。
 
-GitHub 側では、Repository Settings → Pages → Build and deployment → Source を **GitHub Actions** に設定してください。
+GitHub Pages は **GitHub Actions** からデプロイします。Pages workflow は初回実行時に Pages 設定の有効化も試みます。
 
 ## このリポジトリについて
 
