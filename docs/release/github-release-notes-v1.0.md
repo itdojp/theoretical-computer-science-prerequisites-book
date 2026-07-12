@@ -18,7 +18,7 @@
 - 本体教科書 readiness checklist。
 - 図表、Python実装ノート、実行可能な Python examples。
 - ミニプロジェクトと採点基準。
-- Jekyll 用設定と GitHub Pages Actions workflow。
+- Jekyll 用設定と GitHub Pages 向けの GitHub Actions workflow。
 - 用語索引、記号索引、概念別逆引き。
 - 研修運用ガイド、コホート運用ガイド、提出テンプレート。
 - CI用チェックスクリプト、pytest、GitHub Actions設定。
@@ -37,7 +37,7 @@ python -m pytest
 npm run build
 ```
 
-`npm run build` は `docs/_config.yml` を使って `docs/` を Jekyll でビルドします。同じ構成は Book QA と Pages workflow でも検証されます。
+`npm run build` は Ruby / Bundler を前提とし、`docs/_config.yml` を使って `docs/` を Jekyll でビルドします。同じ構成は Book QA と `Deploy Pages` workflow でも検証されます。
 
 ## 互換性
 
