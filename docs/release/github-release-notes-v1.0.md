@@ -34,6 +34,7 @@ python scripts/check_exercise_labels.py
 python scripts/check_exercise_solution_mapping.py
 python examples/python/tests.py
 python -m pytest
+bundle install
 npm run build
 ```
 
