@@ -18,7 +18,7 @@
 - 本体教科書 readiness checklist。
 - 図表、Python実装ノート、実行可能な Python examples。
 - ミニプロジェクトと採点基準。
-- MkDocs Material 用設定。
+- Jekyll 用設定と GitHub Pages Actions workflow。
 - 用語索引、記号索引、概念別逆引き。
 - 研修運用ガイド、コホート運用ガイド、提出テンプレート。
 - CI用チェックスクリプト、pytest、GitHub Actions設定。
@@ -34,9 +34,10 @@ python scripts/check_exercise_labels.py
 python scripts/check_exercise_solution_mapping.py
 python examples/python/tests.py
 python -m pytest
+npm run build
 ```
 
-`mkdocs build --strict` は、MkDocs / MkDocs Material をインストールした公開環境またはCI環境で確認してください。
+`npm run build` は `docs/_config.yml` を使って `docs/` を Jekyll でビルドします。同じ構成は Book QA と Pages workflow でも検証されます。
 
 ## 互換性
 
