@@ -54,13 +54,13 @@
   "ux": {
     "profile": "C",
     "modules": {
-      "quickStart": true,
+      "quickStart": false,
       "readingGuide": true,
       "checklistPack": true,
       "troubleshootingFlow": false,
-      "conceptMap": true,
+      "conceptMap": false,
       "figureIndex": true,
-      "legalNotice": true,
+      "legalNotice": false,
       "glossary": true
     }
   },
