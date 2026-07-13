@@ -7,7 +7,8 @@ v0.8 では、本文を順番に読むだけでなく、弱点・本体教科書
 | 目的 | 使うページ |
 |---|---|
 | どの章から読むか決める | [学習ルート](../learning-path.md) |
-| 章どうしの依存関係を見る | [章間リンクマップ](chapter-link-map.md) |
+| 概念どうしの依存関係と章への対応を見る | [概念依存マップ](../reference/concept-map.md) |
+| 章を通常順に読み、前後の章や演習へ移動する | [章間リンクマップ](chapter-link-map.md) |
 | 本体教科書の章から前提を逆引きする | [本体教科書からの逆引き](main-textbook-reverse-index.md) |
 | 学習タスクを消し込みたい | [学習チェックリスト](../assessment/learning-checklists.md) |
 | 用語の意味を確認したい | [用語索引](../reference/glossary.md) |
