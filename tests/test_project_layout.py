@@ -94,6 +94,19 @@ def test_concept_map_reader_route_is_published() -> None:
     config = json.loads((ROOT / "book-config.json").read_text(encoding="utf-8"))
     assert config["ux"]["modules"]["conceptMap"] is True
 
+    search_data = json.loads(
+        (ROOT / "docs/assets/search-data.json").read_text(encoding="utf-8")
+    )
+    assert {
+        "title": "概念依存マップ",
+        "url": "/theoretical-computer-science-prerequisites-book/reference/concept-map/",
+        "source_path": "docs/reference/concept-map.md",
+    }.items() <= next(
+        item
+        for item in search_data["items"]
+        if item.get("source_path") == "docs/reference/concept-map.md"
+    ).items()
+
     for entrypoint in ("docs/index.md", "docs/learning-path.md"):
         text = (ROOT / entrypoint).read_text(encoding="utf-8")
         assert "[概念依存マップ](reference/concept-map.md)" in text
