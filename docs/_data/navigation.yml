@@ -71,6 +71,8 @@ resources:
     path: /reference/glossary/
   - title: 記号索引
     path: /reference/symbol-index/
+  - title: 概念依存マップ
+    path: /reference/concept-map/
   - title: 概念別逆引き
     path: /reference/concept-index/
   - title: 図表索引

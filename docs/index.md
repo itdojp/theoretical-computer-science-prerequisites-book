@@ -113,6 +113,7 @@ Core / Standard / Extended 演習
 ### 学習支援
 
 - [ナビゲーションガイド](navigation/navigation-guide.md)
+- [概念依存マップ](reference/concept-map.md)
 - [章間リンクマップ](navigation/chapter-link-map.md)
 - [本体教科書からの逆引き](navigation/main-textbook-reverse-index.md)
 - [図表ガイド](visual/visual-index.md)

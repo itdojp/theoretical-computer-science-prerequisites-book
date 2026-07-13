@@ -135,6 +135,7 @@ Python examples で小さい入力を動かす
 
 | 目的 | ページ |
 |---|---|
+| 概念の依存関係と章への対応を確認する | [概念依存マップ](reference/concept-map.md) |
 | 章の前後関係を確認する | [章間リンクマップ](navigation/chapter-link-map.md) |
 | 本体教科書の章から前提を逆引きする | [本体教科書からの逆引き](navigation/main-textbook-reverse-index.md) |
 | 用語を調べる | [用語索引](reference/glossary.md) |

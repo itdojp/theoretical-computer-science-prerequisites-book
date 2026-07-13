@@ -302,6 +302,12 @@
       "excerpt": "概念別逆引き 詰まり方から読む章を選ぶための逆引き。 | 詰まり方 | 読む章 | 確認観点 | |---|---|---| | 証明を書けない | 第1章../part-1-core/01-sets-logic.md, 第2章../part-1-core/02-functions-relations.md, 第3章../part-1-core/03-proofs.md | 定義展開、対偶、背理法、帰納法、反例を確認する。 | | O記"
     },
     {
+      "title": "概念依存マップ",
+      "url": "/theoretical-computer-science-prerequisites-book/reference/concept-map/",
+      "source_path": "docs/reference/concept-map.md",
+      "excerpt": "概念依存マップ 第1〜13章を目次順ではなく、どの概念がどの概念の前提になるかで俯瞰する地図。Core、Standard、Extendedを横断し、集合と論理、証明、漸近記法、グラフ、形式言語、確率、数論・代数、線形代数、並行性、Petriネットの依存関係と章への対応を示す。"
+    },
+    {
       "title": "用語索引",
       "url": "/theoretical-computer-science-prerequisites-book/reference/glossary/",
       "source_path": "docs/reference/glossary.md",

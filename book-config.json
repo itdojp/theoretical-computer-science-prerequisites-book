@@ -58,7 +58,7 @@
       "readingGuide": true,
       "checklistPack": true,
       "troubleshootingFlow": false,
-      "conceptMap": false,
+      "conceptMap": true,
       "figureIndex": true,
       "legalNotice": false,
       "glossary": true

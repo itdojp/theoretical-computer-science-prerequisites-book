@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import json
 import subprocess
 import sys
 from pathlib import Path
+
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -66,3 +69,50 @@ def test_required_files_exist() -> None:
     ]
     for rel in required:
         assert (ROOT / rel).exists(), rel
+
+
+def test_concept_map_reader_route_is_published() -> None:
+    route = "/reference/concept-map/"
+    source = ROOT / "docs" / f"{route.strip('/')}.md"
+    assert source.exists()
+    source_text = source.read_text(encoding="utf-8")
+    assert source_text.startswith("# 概念依存マップ\n")
+    for related_page in (
+        "concept-index.md",
+        "../learning-path.md",
+        "../navigation/chapter-link-map.md",
+        "../navigation/main-textbook-reverse-index.md",
+        "../appendix/mapping-to-main-textbook.md",
+    ):
+        assert related_page in source_text
+
+    navigation = yaml.safe_load(
+        (ROOT / "docs/_data/navigation.yml").read_text(encoding="utf-8")
+    )
+    assert {"title": "概念依存マップ", "path": route} in navigation["resources"]
+
+    config = json.loads((ROOT / "book-config.json").read_text(encoding="utf-8"))
+    assert config["ux"]["modules"]["conceptMap"] is True
+
+    search_data = json.loads(
+        (ROOT / "docs/assets/search-data.json").read_text(encoding="utf-8")
+    )
+    assert {
+        "title": "概念依存マップ",
+        "url": "/theoretical-computer-science-prerequisites-book/reference/concept-map/",
+        "source_path": "docs/reference/concept-map.md",
+    }.items() <= next(
+        item
+        for item in search_data["items"]
+        if item.get("source_path") == "docs/reference/concept-map.md"
+    ).items()
+
+    for entrypoint in ("docs/index.md", "docs/learning-path.md"):
+        text = (ROOT / entrypoint).read_text(encoding="utf-8")
+        assert "[概念依存マップ](reference/concept-map.md)" in text
+
+    navigation_guide = (ROOT / "docs/navigation/navigation-guide.md").read_text(
+        encoding="utf-8"
+    )
+    assert "[概念依存マップ](../reference/concept-map.md)" in navigation_guide
+    assert "[章間リンクマップ](chapter-link-map.md)" in navigation_guide
