@@ -132,7 +132,7 @@ Core / Standard / Extended 演習
 
 - [章別例題集](examples/worked-examples-by-chapter.md)
 - [章別レビュー問題](review/chapter-review-problems.md)
-- [章別レビュー問題 解答](review/chapter-review-solutions.md)
+- [章別レビュー問題 採点観点（完全解答ではありません）](review/chapter-review-solutions.md)
 - [ミニプロジェクト](projects/mini-projects.md)
 - [ミニプロジェクト採点基準](projects/project-rubrics.md)
 

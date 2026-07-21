@@ -55,6 +55,8 @@ additional:
     path: /exercises/integrated-readiness-test/
   - title: 章別レビュー問題
     path: /review/chapter-review-problems/
+  - title: 章別レビュー問題 採点観点
+    path: /review/chapter-review-solutions/
   - title: ミニプロジェクト
     path: /projects/mini-projects/
   - title: 章別例題集
