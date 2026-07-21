@@ -9,7 +9,8 @@
 | 演習 | 問題ファイル | 解答ファイル | 監査方法 |
 |---|---|---|---|
 | Core 演習 | `docs/exercises/core-exercises.md` | `docs/exercises/solutions.md` | 1〜70 の番号一致 |
-| Standard 演習 | `docs/exercises/standard-exercises.md` | `docs/exercises/standard-solutions.md` | S1〜S60 の番号一致 |
+| Standard 演習（第7〜9章） | `docs/exercises/standard-exercises.md` | `docs/exercises/standard-solutions.md` | S1〜S60 の番号一致 |
+| Standard グラフ演習（第6章） | `docs/exercises/standard-exercises.md` | `docs/exercises/standard-solutions.md` | G1〜G12 の番号一致 |
 | Extended 演習 | `docs/exercises/extended-exercises.md` | `docs/exercises/extended-solutions.md` | E1〜E80 の番号一致 |
 | 統合到達確認テスト | `docs/exercises/integrated-readiness-test.md` | `docs/exercises/integrated-readiness-solutions.md` | Q1〜Q50 と A1〜A50 の番号一致 |
 
