@@ -5,12 +5,33 @@ import pytest
 from scripts.check_progression_policy import (
     check_policy,
     diagnosis_gate,
+    has_markdown_link,
     integrated_gate,
 )
 
 
 def test_policy_documents_are_synchronized() -> None:
     assert check_policy() == []
+
+
+@pytest.mark.parametrize(
+    "link",
+    [
+        "](progression-policy.md)",
+        "](progression-policy.md#共通の必須ゲート)",
+        "](  progression-policy.md#共通の必須ゲート  )",
+        "](<progression-policy.md#共通の必須ゲート>)",
+        "](progression-policy.md \"正本\")",
+    ],
+)
+def test_policy_link_accepts_anchor_and_whitespace(link: str) -> None:
+    assert has_markdown_link(f"[共通ポリシー{link}", "progression-policy.md")
+
+
+def test_policy_link_rejects_different_target() -> None:
+    assert not has_markdown_link(
+        "[別ページ](other-policy.md#共通の必須ゲート)", "progression-policy.md"
+    )
 
 
 @pytest.mark.parametrize(

@@ -91,6 +91,15 @@ def integrated_gate(total_score: int, proof_score: int) -> bool:
     return total_score >= INTEGRATED_MIN and proof_score >= PROOF_MIN
 
 
+def has_markdown_link(text: str, target: str) -> bool:
+    """指定先へのMarkdownリンクを、任意の空白・見出しアンカー込みで検出する。"""
+    pattern = re.compile(
+        rf"\]\(\s*<?{re.escape(target)}(?:#[^)\s>]*)?>?"
+        r"(?:\s+(?:\"[^\"]*\"|'[^']*'|\([^)]*\)))?\s*\)"
+    )
+    return pattern.search(text) is not None
+
+
 def check_policy() -> list[str]:
     errors: list[str] = []
     if not POLICY.exists():
@@ -107,16 +116,26 @@ def check_policy() -> list[str]:
             errors.append(f"missing policy consumer: {rel}")
             continue
         text = path.read_text(encoding="utf-8")
-        if f"]({target})" not in text:
+        if not has_markdown_link(text, target):
             errors.append(f"{rel} does not link to canonical policy via {target}")
 
     for rel, snippets in REQUIRED_PAGE_SNIPPETS.items():
-        text = (ROOT / rel).read_text(encoding="utf-8")
+        path = ROOT / rel
+        if not path.exists():
+            if rel not in REQUIRED_REFERENCES:
+                errors.append(f"missing synchronized policy page: {rel}")
+            continue
+        text = path.read_text(encoding="utf-8")
         for snippet in snippets:
             if snippet not in text:
                 errors.append(f"{rel} missing synchronized criterion: {snippet!r}")
 
-    scan_paths = [*sorted((ROOT / "docs").rglob("*.md")), ROOT / "docs/assets/search-data.json"]
+    scan_paths = sorted((ROOT / "docs").rglob("*.md"))
+    search_data = ROOT / "docs/assets/search-data.json"
+    if search_data.exists():
+        scan_paths.append(search_data)
+    else:
+        errors.append("missing policy search data: docs/assets/search-data.json")
     for path in scan_paths:
         text = path.read_text(encoding="utf-8")
         for label, pattern in FORBIDDEN_PATTERNS.items():
