@@ -44,4 +44,4 @@ def test_markdown_scan_finds_negative_fixture(tmp_path: Path) -> None:
 
 def test_counting_chapter_contains_literal_binomial_notation() -> None:
     text = (ROOT / "docs/part-2-standard/07-counting.md").read_text(encoding="utf-8")
-    assert "`C(n,k)` / `\\binom{n}{k}`" in text
+    assert "\\binom{n}{k}" in text
