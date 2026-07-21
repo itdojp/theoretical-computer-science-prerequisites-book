@@ -116,19 +116,19 @@ Day 5: 統合テスト、ミニプロジェクト、readiness 判定
 
 ## 合格基準
 
-標準合格基準は次です。
+本体教科書への進行判定は、[共通の進行判定ポリシー](../assessment/progression-policy.md)を正本とします。標準合格基準は次です。
 
 | 判定対象 | 合格ライン |
 |---|---:|
-| 前提診断 | 80問中64問以上、かつ Core 領域の失点が少ないこと |
+| 前提診断 | 80問中68問以上 |
 | 章別レビュー問題 | 各章70%以上 |
 | Core 演習 | 80%以上 |
 | Standard 演習 | 70%以上 |
 | Extended 演習 | 必要章で70%以上 |
-| 統合到達確認テスト | 50問中35問以上 |
+| 統合到達確認テスト | 50問中43問以上、かつ証明問題6問中3問以上 |
 | ミニプロジェクト | 20点満点中14点以上 |
 
-ただし、本体教科書の第10〜12章へ進む受講者は、Extended の該当章を合格ラインに含めます。
+ただし、総合得点で証明問題または対象章別 readiness の未達を上書きしてはいけません。本体教科書の第10〜12章へ進む受講者は、Extended の該当章を合格ラインに含めます。
 
 ## レビュー方針
 
@@ -176,4 +176,5 @@ Day 5: 統合テスト、ミニプロジェクト、readiness 判定
 - [弱点別リカバリールート](../assessment/recovery-routes.md)
 - [章別レビュー問題](../review/chapter-review-problems.md)
 - [統合到達確認テスト](../exercises/integrated-readiness-test.md)
+- [本体教科書への進行判定ポリシー](../assessment/progression-policy.md)
 - [本体教科書 readiness checklist](../assessment/main-textbook-readiness.md)

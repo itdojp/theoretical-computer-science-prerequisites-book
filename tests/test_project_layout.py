@@ -27,6 +27,7 @@ def test_required_files_exist() -> None:
         "docs/review/chapter-review-problems.md",
         "docs/review/chapter-review-solutions.md",
         "docs/assessment/grading-forms.md",
+        "docs/assessment/progression-policy.md",
         "docs/exercises/labeled-exercise-index.md",
         "docs/quality/ci-and-quality-control.md",
         "docs/audit/v1-release-candidate-audit.md",
@@ -66,6 +67,7 @@ def test_required_files_exist() -> None:
         ".github/ISSUE_TEMPLATE/operations.md",
         ".github/PULL_REQUEST_TEMPLATE.md",
         ".github/workflows/ci.yml",
+        "scripts/check_progression_policy.py",
     ]
     for rel in required:
         assert (ROOT / rel).exists(), rel
