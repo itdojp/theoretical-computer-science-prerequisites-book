@@ -138,6 +138,7 @@ Python examples で小さい入力を動かす
 | 記号を調べる | [記号索引](reference/symbol-index.md) |
 | 学習進捗を消し込む | [学習チェックリスト](assessment/learning-checklists.md) |
 | 章別に理解を確認する | [章別レビュー問題](review/chapter-review-problems.md) |
-| 採点観点を確認する | [採点フォーム](assessment/grading-forms.md) |
+| 章別レビューの採点要点を確認する | [章別レビュー問題 採点観点](review/chapter-review-solutions.md) |
+| 共通の採点尺度を確認する | [採点フォーム](assessment/grading-forms.md) |
 
 受講者運用、リリース、監査、品質ゲートなどの保守資料は、書籍サイトの導線から外し、[GitHub リポジトリ](https://github.com/itdojp/theoretical-computer-science-prerequisites-book)で管理します。

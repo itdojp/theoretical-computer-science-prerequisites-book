@@ -6,6 +6,8 @@
 
 採点は `../assessment/scoring-rubric.md` と `../assessment/grading-forms.md` を併用してください。
 
+各問題の自己採点には[章別レビュー問題 採点観点](chapter-review-solutions.md)を使います。リンク先は採点時の要点であり、完全解答ではありません。
+
 ## 難易度
 
 | ラベル | 意味 |

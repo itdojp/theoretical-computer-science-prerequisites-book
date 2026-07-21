@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -139,10 +140,119 @@ def check_set(spec: ExerciseSet) -> list[str]:
     return errors
 
 
+def check_review_grading_guide() -> list[str]:
+    """章別レビューの採点観点を完全解答と誤認させない公開契約を検査する。"""
+    errors: list[str] = []
+    paths = {
+        "problems": ROOT / "docs/review/chapter-review-problems.md",
+        "guide": ROOT / "docs/review/chapter-review-solutions.md",
+        "index": ROOT / "docs/index.md",
+        "learning_path": ROOT / "docs/learning-path.md",
+        "navigation": ROOT / "docs/_data/navigation.yml",
+        "search": ROOT / "docs/assets/search-data.json",
+    }
+    missing = [str(path.relative_to(ROOT)) for path in paths.values() if not path.exists()]
+    if missing:
+        return [f"review grading guide contract: missing {path}" for path in missing]
+
+    problems = paths["problems"].read_text(encoding="utf-8")
+    guide = paths["guide"].read_text(encoding="utf-8")
+    index = paths["index"].read_text(encoding="utf-8")
+    learning_path = paths["learning_path"].read_text(encoding="utf-8")
+    navigation = paths["navigation"].read_text(encoding="utf-8")
+
+    required = {
+        "docs/review/chapter-review-problems.md": (
+            problems,
+            "[章別レビュー問題 採点観点](chapter-review-solutions.md)",
+            "完全解答ではありません",
+        ),
+        "docs/review/chapter-review-solutions.md": (
+            guide,
+            "# 章別レビュー問題 採点観点",
+            "完全な答案例ではありません",
+            "問題1〜5に同じ順序で対応します",
+        ),
+        "docs/index.md": (
+            index,
+            "[章別レビュー問題 採点観点（完全解答ではありません）](review/chapter-review-solutions.md)",
+        ),
+        "docs/learning-path.md": (
+            learning_path,
+            "[章別レビュー問題 採点観点](review/chapter-review-solutions.md)",
+        ),
+        "docs/_data/navigation.yml": (
+            navigation,
+            "title: 章別レビュー問題 採点観点",
+            "path: /review/chapter-review-solutions/",
+        ),
+    }
+    for rel, (text, *snippets) in required.items():
+        for snippet in snippets:
+            if snippet not in text:
+                errors.append(f"{rel}: missing review grading guide text: {snippet!r}")
+
+    forbidden = re.compile(r"章別レビュー問題\s+解答(?:・採点観点)?")
+    for rel, text in (
+        ("docs/review/chapter-review-problems.md", problems),
+        ("docs/review/chapter-review-solutions.md", guide),
+        ("docs/index.md", index),
+        ("docs/learning-path.md", learning_path),
+        ("docs/_data/navigation.yml", navigation),
+    ):
+        match = forbidden.search(text)
+        if match:
+            errors.append(f"{rel}: reader-facing complete-solution label remains: {match.group(0)!r}")
+
+    try:
+        search_data = json.loads(paths["search"].read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        errors.append(f"docs/assets/search-data.json: cannot inspect review guide: {exc}")
+    else:
+        items = search_data.get("items")
+        if not isinstance(items, list):
+            errors.append("docs/assets/search-data.json: items must be a list")
+            items = []
+        matches = [
+            item
+            for item in items
+            if isinstance(item, dict)
+            and item.get("source_path") == "docs/review/chapter-review-solutions.md"
+        ]
+        if len(matches) != 1:
+            errors.append(
+                "docs/assets/search-data.json: review grading guide must have exactly one item"
+            )
+        else:
+            item = matches[0]
+            if item.get("title") != "章別レビュー問題 採点観点":
+                errors.append("docs/assets/search-data.json: review guide title is not synchronized")
+            expected_url = (
+                "/theoretical-computer-science-prerequisites-book/"
+                "review/chapter-review-solutions/"
+            )
+            if item.get("url") != expected_url:
+                errors.append(
+                    "docs/assets/search-data.json: review guide public URL is not preserved"
+                )
+            excerpt = item.get("excerpt", "")
+            if not isinstance(excerpt, str) or "完全な答案例ではありません" not in excerpt:
+                errors.append(
+                    "docs/assets/search-data.json: review guide excerpt must disclose that it is not a complete solution"
+                )
+            elif forbidden.search(excerpt):
+                errors.append(
+                    "docs/assets/search-data.json: review guide excerpt retains a complete-solution label"
+                )
+
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     for spec in SETS:
         errors.extend(check_set(spec))
+    errors.extend(check_review_grading_guide())
     if errors:
         for error in errors:
             print(error, file=sys.stderr)
