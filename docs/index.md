@@ -138,6 +138,7 @@ Core / Standard / Extended 演習
 
 ### 評価・到達判定
 
+- [本体教科書への進行判定ポリシー](assessment/progression-policy.md)
 - [採点ルーブリック](assessment/scoring-rubric.md)
 - [採点フォーム](assessment/grading-forms.md)
 - [到達判定表](assessment/attainment-criteria.md)
@@ -187,4 +188,3 @@ Core / Standard / Extended 演習
 
 - 誤り指摘・改善提案: [GitHub Issues](https://github.com/itdojp/theoretical-computer-science-prerequisites-book/issues)
 - 本文に直接不要なリリース、監査、保守、テンプレート類は、書籍サイトの主導線から外し、[GitHub リポジトリ](https://github.com/itdojp/theoretical-computer-science-prerequisites-book)で管理します。
-

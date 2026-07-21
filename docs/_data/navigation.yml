@@ -49,6 +49,8 @@ additional:
     path: /exercises/extended-exercises/
   - title: 章末確認チェック
     path: /assessment/chapter-exit-checks/
+  - title: 本体教科書への進行判定
+    path: /assessment/progression-policy/
   - title: 統合到達確認テスト
     path: /exercises/integrated-readiness-test/
   - title: 章別レビュー問題

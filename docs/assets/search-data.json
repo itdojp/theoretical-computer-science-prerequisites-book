@@ -50,6 +50,12 @@
       "excerpt": "本体教科書 readiness checklist 目的 本体教科書の各章へ入る前に、該当する前提が揃っているかを確認します。ここで「いいえ」が多い場合は、該当する補助教材の章へ戻ってください。 第1章 数学的基礎へ進む前 | 確認項目 | 必要章 | |---|---| | 集合、部分集合、冪集合を説明できる | 第1章 | | 命題論理と述語論理の記号を読める | 第1章 | | 量化記号の否定を変形できる | 第1章 | | 関数"
     },
     {
+      "title": "本体教科書への進行判定ポリシー",
+      "url": "/theoretical-computer-science-prerequisites-book/assessment/progression-policy/",
+      "source_path": "docs/assessment/progression-policy.md",
+      "excerpt": "本体教科書への進行判定ポリシー このページを共通判定基準の正本とする。必須ゲートは、前提診断68/80以上、統合到達確認テスト43/50以上、証明問題3/6以上、対象章別 readiness の達成。総合得点で証明問題または対象章別 readiness の未達を上書きしない。境界値直下・一致・直上の判定例も掲載する。"
+    },
+    {
       "title": "弱点別リカバリールート",
       "url": "/theoretical-computer-science-prerequisites-book/assessment/recovery-routes/",
       "source_path": "docs/assessment/recovery-routes.md",
@@ -65,7 +71,7 @@
       "title": "前提診断 80問",
       "url": "/theoretical-computer-science-prerequisites-book/diagnosis/",
       "source_path": "docs/diagnosis.md",
-      "excerpt": "前提診断 80問 使い方 - 制限時間は 120〜150分。 - 参考資料を見ずに解く。 - 各問1点、合計80点。 - 証明問題は、結論だけでなく理由が書けていれば正答。 - 実装問題は、擬似コードでもPythonでもよい。 - 採点後は assessment/scoring-rubric.md と assessment/recovery-routes.md を使って、領域別に補強する。 判定 | 得点 | 判定 | 推奨対応 | |"
+      "excerpt": "前提診断 80問 使い方 制限時間は120〜150分。各問1点、合計80点。本体教科書への進行判定は共通の進行判定ポリシーを正本とする。判定 68〜80 診断ゲート達成。統合テスト、証明問題、対象章別 readiness の残りのゲートを確認する。56〜67 軽度不足。40〜55 中度不足。0〜39 重度不足。"
     },
     {
       "title": "章別例題集",
@@ -113,7 +119,7 @@
       "title": "統合到達確認テスト 50問",
       "url": "/theoretical-computer-science-prerequisites-book/exercises/integrated-readiness-test/",
       "source_path": "docs/exercises/integrated-readiness-test.md",
-      "excerpt": "統合到達確認テスト 50問 使い方 - 制限時間は120分。 - 参考資料を見ずに解く。 - 各問1点。証明問題は、主要な論理が書けていれば正答。 - 43点以上で本体教科書へ進行可。 - 証明問題が半分未満の場合は、総合点に関係なく第3章へ戻る。 --- 難易度ラベル - A 基本: 定義を読む・単純計算をする。 - B 標準: 複数の定義を組み合わせる。 - C 発展: 証明・設計・実装の説明が必要。 - D 実装: 実行可能なコー"
+      "excerpt": "統合到達確認テスト 50問 制限時間は120分。各問1点。合計43/50以上、かつ証明問題 Q7〜Q10・Q23・Q49 の3/6以上を満たす。共通の進行判定ポリシーに従い、対象章別 readiness を含む他の必須ゲートも確認する。証明問題が2/6以下の場合は、総合点に関係なく第3章へ戻る。"
     },
     {
       "title": "難易度ラベル付き演習インデックス",
@@ -161,7 +167,7 @@
       "title": "学習ルート",
       "url": "/theoretical-computer-science-prerequisites-book/learning-path/",
       "source_path": "docs/learning-path.md",
-      "excerpt": "学習ルート 基本方針 この教材は、全員が全章を同じ順序で読むための教材ではない。前提診断で弱点を特定し、必要な章だけを重点的に読む。 標準ワークフロー 得点別ルート | 前提診断の正答率 | 推奨ルート | |---:|---| | 80%以上 | 本体教科書へ進み、詰まった章だけ戻る | | 60〜79% | Core を確認し、Standard/Extended は失点領域だけ読む | | 40〜59% | Core + Stand"
+      "excerpt": "学習ルート 基本方針 この教材は、全員が全章を同じ順序で読むための教材ではない。前提診断で弱点を特定し、必要な章だけを重点的に読む。得点別ルート 85%以上は診断ゲート達成。70〜84%は失点領域を重点的に読む。50〜69%はCoreとStandardを通す。50%未満はCoreから補強する。本体教科書への進行条件は共通の進行判定ポリシーを正本とする。"
     },
     {
       "title": "章間リンクマップ",
