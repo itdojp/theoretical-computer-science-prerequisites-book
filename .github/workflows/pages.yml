@@ -38,6 +38,9 @@ jobs:
       - name: Check Markdown links
         run: python scripts/check_links.py
 
+      - name: Check Markdown control characters
+        run: python scripts/check_control_characters.py
+
       - name: Check progression policy
         run: python scripts/check_progression_policy.py
 
