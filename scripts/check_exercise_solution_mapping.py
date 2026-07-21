@@ -209,10 +209,15 @@ def check_review_grading_guide() -> list[str]:
     except (json.JSONDecodeError, OSError) as exc:
         errors.append(f"docs/assets/search-data.json: cannot inspect review guide: {exc}")
     else:
+        items = search_data.get("items")
+        if not isinstance(items, list):
+            errors.append("docs/assets/search-data.json: items must be a list")
+            items = []
         matches = [
             item
-            for item in search_data.get("items", [])
-            if item.get("source_path") == "docs/review/chapter-review-solutions.md"
+            for item in items
+            if isinstance(item, dict)
+            and item.get("source_path") == "docs/review/chapter-review-solutions.md"
         ]
         if len(matches) != 1:
             errors.append(
@@ -222,9 +227,22 @@ def check_review_grading_guide() -> list[str]:
             item = matches[0]
             if item.get("title") != "章別レビュー問題 採点観点":
                 errors.append("docs/assets/search-data.json: review guide title is not synchronized")
-            if "完全な答案例ではありません" not in item.get("excerpt", ""):
+            expected_url = (
+                "/theoretical-computer-science-prerequisites-book/"
+                "review/chapter-review-solutions/"
+            )
+            if item.get("url") != expected_url:
+                errors.append(
+                    "docs/assets/search-data.json: review guide public URL is not preserved"
+                )
+            excerpt = item.get("excerpt", "")
+            if not isinstance(excerpt, str) or "完全な答案例ではありません" not in excerpt:
                 errors.append(
                     "docs/assets/search-data.json: review guide excerpt must disclose that it is not a complete solution"
+                )
+            elif forbidden.search(excerpt):
+                errors.append(
+                    "docs/assets/search-data.json: review guide excerpt retains a complete-solution label"
                 )
 
     return errors
