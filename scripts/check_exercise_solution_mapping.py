@@ -19,6 +19,7 @@ class ExerciseSet:
     expected_count: int
     prefix: str | None = None
     solution_prefix_to_problem: str | None = None
+    require_explicit_anchors: bool = False
 
 
 def normalize(ids: list[str], prefix: str | None = None) -> list[str]:
@@ -50,6 +51,16 @@ SETS = [
         solution_pattern=re.compile(r"^###\s+(S\d+)\b", re.MULTILINE),
         expected_count=60,
         prefix="S",
+    ),
+    ExerciseSet(
+        name="Standard グラフ演習",
+        problem_file=ROOT / "docs/exercises/standard-exercises.md",
+        solution_file=ROOT / "docs/exercises/standard-solutions.md",
+        problem_pattern=re.compile(r"^###\s+(G\d+)\b", re.MULTILINE),
+        solution_pattern=re.compile(r"^###\s+(G\d+)\b", re.MULTILINE),
+        expected_count=12,
+        prefix="G",
+        require_explicit_anchors=True,
     ),
     ExerciseSet(
         name="Extended 演習",
@@ -108,6 +119,23 @@ def check_set(spec: ExerciseSet) -> list[str]:
         errors.append(f"{spec.name}: missing solutions for {', '.join(missing)}")
     if extra:
         errors.append(f"{spec.name}: solution ids without problems {', '.join(extra)}")
+    if spec.require_explicit_anchors:
+        for path, ids, kind in (
+            (spec.problem_file, problems, "problem"),
+            (spec.solution_file, solutions, "solution"),
+        ):
+            text = path.read_text(encoding="utf-8")
+            for exercise_id in ids:
+                anchor = exercise_id.lower()
+                pattern = re.compile(
+                    rf"^###\s+{re.escape(exercise_id)}\b[^\n]*\n"
+                    rf"\{{:\s*#{re.escape(anchor)}\s*\}}$",
+                    re.MULTILINE,
+                )
+                if not pattern.search(text):
+                    errors.append(
+                        f"{spec.name}: {kind} {exercise_id} is missing explicit anchor #{anchor}"
+                    )
     return errors
 
 

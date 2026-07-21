@@ -231,8 +231,8 @@ DAG の頂点を、すべての有向辺 `(u,v)` について `u` が `v` より
 ## 次に読む章
 
 - 通常ルート: [第7章 組合せと数え上げ](07-counting.md)
-- 演習: [Standard 演習](../exercises/standard-exercises.md)
-- 解答: [演習解答](../exercises/standard-solutions.md)
+- 演習: [Standard 演習 グラフ（G1〜G12）](../exercises/standard-exercises.md#g1)
+- 解答: [グラフ演習 解答（G1〜G12）](../exercises/standard-solutions.md#g1)
 - 図表: [関連図表](../visual/graph-and-automata-diagrams.md)
 - 実装確認: [Python実装ノート](../python/algorithm-snippets.md)
 - 全体導線: [学習チェックリスト](../assessment/learning-checklists.md)
