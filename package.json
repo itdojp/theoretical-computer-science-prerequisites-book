@@ -12,7 +12,7 @@
     "start": "npm run dev",
     "build": "bundle exec jekyll build --source docs --config docs/_config.yml --destination _site",
     "check-links": "python scripts/check_links.py",
-    "test": "python scripts/check_links.py && python scripts/check_progression_policy.py && python scripts/check_exercise_labels.py && python scripts/check_exercise_solution_mapping.py && python examples/python/tests.py && python -m pytest"
+    "test": "python scripts/check_links.py && python scripts/check_control_characters.py && python scripts/check_progression_policy.py && python scripts/check_exercise_labels.py && python scripts/check_exercise_solution_mapping.py && python examples/python/tests.py && python -m pytest"
   },
   "repository": {
     "type": "git",

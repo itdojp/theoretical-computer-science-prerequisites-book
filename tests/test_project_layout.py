@@ -67,6 +67,7 @@ def test_required_files_exist() -> None:
         ".github/ISSUE_TEMPLATE/operations.md",
         ".github/PULL_REQUEST_TEMPLATE.md",
         ".github/workflows/ci.yml",
+        "scripts/check_control_characters.py",
         "scripts/check_progression_policy.py",
     ]
     for rel in required:
